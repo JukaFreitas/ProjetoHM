@@ -5,6 +5,6 @@ export type User = {
     senha: string, 
     morada: string, 
     codigo_postal: string, 
-    pais: string 
-
+    pais: string, 
+    wishlist: Array<number>
 }
