@@ -1,26 +1,89 @@
 <header>
-  <div class="btn-group" dropdown>
-    <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary"
-      aria-controls="dropdown-animated">
-      Homem<span class="caret"></span>
-    </button>
-    <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
-      <li role="menuitem"><a class="dropdown-item" href="#">Casacos</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Camisas</a>
-      </li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Calças</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Sweatshirts</a>
-      </li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Polos</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Todos</a></li>
-    </ul>
+  <div class="iconsCentro">
+    <div class="btn-group" dropdown>
+      <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary"
+        aria-controls="dropdown-animated">
+        Homem<span class="caret"></span>
+      </button>
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+        <li role="menuitem"><a class="dropdown-item" href="#">Casacos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Camisas</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Calças</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sweatshirts</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Polos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Todos</a></li>
+      </ul>
+    </div>
+    <div class="separadorHeader">|</div>
+    <div class="btn-group" dropdown>
+      <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary"
+        aria-controls="dropdown-animated">
+        Mulher<span class="caret"></span>
+      </button>
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+        <li role="menuitem"><a class="dropdown-item" href="#">Casacos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Camisas</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Calças</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sweatshirts</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Polos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Todos</a></li>
+      </ul>
+    </div>
+    <img src="../assets/logo.png" class="imagemHeader">
+    <div class="btn-group" dropdown>
+      <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary"
+        aria-controls="dropdown-animated">
+        Criança<span class="caret"></span>
+      </button>
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+        <li role="menuitem"><a class="dropdown-item" href="#">Casacos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Camisas</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Calças</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sweatshirts</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Polos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Todos</a></li>
+      </ul>
+    </div>
+    <div class="separadorHeader">|</div>
+    <div class="btn-group" dropdown>
+      <button id="button-animated" dropdownToggle type="button" class="btn btn-secondary"
+        aria-controls="dropdown-animated">
+        Acessórios<span class="caret"></span>
+      </button>
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+        <li role="menuitem"><a class="dropdown-item" href="#">Casacos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Camisas</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Calças</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sweatshirts</a>
+        </li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Polos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Todos</a></li>
+      </ul>
+    </div>
   </div>
+
+  <!-- 
   <a routerLink="users" routerLinkActive="activa">users</a>
 
- <a routerLink="produtos" routerLinkActive="activa">Produtos</a>
+ <a routerLink="produtos" routerLinkActive="activa">Produtos</a> -->
 </header>
+<body></body>
+
+
+
 <main>
+  <app-users></app-users>
   <router-outlet>
-  </router-outlet> 
+  </router-outlet>
 </main>

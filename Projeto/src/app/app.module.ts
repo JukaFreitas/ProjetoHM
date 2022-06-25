@@ -8,20 +8,28 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TiposprodutoComponent } from './tiposproduto/tiposproduto.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { UserautenticacaoComponent } from './users/userautenticacao/userautenticacao.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     ProdutosComponent,
-    TiposprodutoComponent
+    TiposprodutoComponent,
+    UserautenticacaoComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot(),
+    FontAwesomeModule, 
+    ReactiveFormsModule
     
   ],
   providers: [],

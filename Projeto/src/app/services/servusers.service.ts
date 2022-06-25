@@ -32,6 +32,7 @@ export class ServusersService {
     return this.http.get<User>(`${this.urlAPI}/${id}`); 
   }
 
+
   filtraUser(filtroUser:string){
     return this.http.get<User>(`${this.urlAPI}?title_like=${filtroUser}`); 
 
@@ -48,7 +49,8 @@ export class ServusersService {
   }
 
   deleteUser(id:number){
-    return this.http.delete<User>(`${this.urlAPI}/${id}`).pipe(catchError(this.processaErro)); 
+    return this.http.delete<User>(`${this.urlAPI}/${id}`)
+    .pipe(catchError(this.processaErro)); 
 
   }
 

@@ -211,7 +211,7 @@
         {
             "id": 1,
             "nome": "Joana",
-            "email": "joana 2gmail.com",
+            "email": "joana@gmail.com",
             "senha": "1234teste",
             "morada": "Rua Unidade Vimaranense",
             "codigo_postal": "4805-285",
