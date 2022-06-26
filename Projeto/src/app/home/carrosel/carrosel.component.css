@@ -6,7 +6,10 @@
 
 .carrosel .item {
     height: 400px;
+    z-index: -1;
+   
   }
+
 
 
   .carroselTexto{

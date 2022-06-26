@@ -6,17 +6,18 @@
 
 html,
 body {
-  font-family: "Roboto", sans-serif;
-  height: 100%;
+    font-family: "Roboto", sans-serif;
+    height: 100%;
 }
 
 body {
     margin-top: 0;
     margin-bottom: 0;
-  }
+}
 
 .imagemHeader {
     width: 80px;
+    z-index: 1;
 }
 
 #button-animated {
@@ -27,13 +28,7 @@ body {
 
 }
 
-header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-   
-  
-}
+
 
 .iconsCentro {
     display: flex;
@@ -41,47 +36,46 @@ header {
     align-items: center;
     padding: 5px;
 
- 
+
 }
 
-.btDrop{
+.iconsUser {
+    left: 0;
+
+}
+
+.btDrop {
     padding: 5px;
     border: none;
     background-color: transparent;
 
 }
 
-.dropdownContent{
+.dropdownContent {
     display: none;
-  position: absolute;
-  z-index: 1;
-  background-color: transparent;
-  list-style-type: none;
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
 }
 
-.dropdownContent a{
+.dropdownContent a {
     display: block;
     color: black;
-    width: fit-content;
     text-decoration: none;
 }
 
 .dropdown:hover .dropdownContent {
     width: 200px;
     font-size: small;
-    display: 
-    block;
+    display:
+        block;
+
+
 }
-/* 
- .iconsHeader {
-display: flex;
-align-items: center;
-padding: 10%;
 
+app-user {
 
-} 
-
-.iconsHeader>*{
-padding: 10px;    
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
- */

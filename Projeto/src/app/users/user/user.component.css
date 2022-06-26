@@ -1,14 +1,12 @@
-
-header {
-    
-    display: flex;
-    justify-content: flex-end;
-   
-
+.iconsHeader{
+   display: flex;
 }
+
+
 .iconsHeader button {
     border: none;
     background-color: white ;
+
    
 
 }
