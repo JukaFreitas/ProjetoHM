@@ -4,8 +4,18 @@
         <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
 </div>
-<form [formGroup]="formLogin" (ngSubmit)="userLogin()">
-    <p>Email:<input type="text" [formControlName]="'email'"/></p>
-    <p>Senha:<input type="password" [formControlName]="'senha'"/></p>
-    <p><input type="submit" value="Entrar"></p>
-</form>
+<div class="formCaixa">
+    <form [formGroup]="formLogin" (ngSubmit)="userLogin()">
+        <p>Email:<input type="text" [formControlName]="'email'"></p>
+        <small *ngIf="formLogin.get('email')!.touched && formLogin.get('email')!.invalid">
+            <span *ngIf="email.errors?.['required']">O campo 'email' é de preenchimento obrigatório!</span>
+            <span *ngIf="email.hasError('pattern')">O 'email' inserido não tem formato correcto</span>
+        </small>
+        <p>Senha:<input type="password" [formControlName]="'senha'"></p>
+        <small *ngIf="formLogin.get('senha')!.touched && formLogin.get('senha')!.invalid">
+            <span *ngIf="senha.errors?.['required']">O campo 'senha' é de preenchimento obrigatório!</span>
+        </small>
+            <p class="btEntrar"><input type="submit" value="Entrar"></p>
+          
+    </form>
+</div>

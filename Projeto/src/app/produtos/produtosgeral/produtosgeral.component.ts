@@ -1,31 +1,23 @@
-import { compileNgModuleDeclarationExpression } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, OnInit } from '@angular/core';
-import { Produto } from '../models/produto';
-import { ServprodutosService } from '../services/servprodutos.service';
+import { Produto } from 'src/app/models/produto';
+import { ServprodutosService } from 'src/app/services/servprodutos.service';
 
 @Component({
-  selector: 'app-produtos',
-  templateUrl: './produtos.component.html',
-  styleUrls: ['./produtos.component.css']
+  selector: 'app-produtosgeral',
+  templateUrl: './produtosgeral.component.html',
+  styleUrls: ['./produtosgeral.component.css']
 })
-export class ProdutosComponent implements OnInit {
-
+export class ProdutosgeralComponent implements OnInit {
   listaProdutos: Produto[] = [];
   listaProdutosDestaque: Produto[] = [];
 
 
   constructor(private servProdutos: ServprodutosService) { }
 
-
   ngOnInit(): void {
-
-    this.leProdutos();
-    this.getProdutosDestaque();
-
-
+    // this.leProdutos();
+    // this.getProdutosDestaque();
   }
-
-
   leProdutos() {
     this.servProdutos.getProdutos().
       subscribe((produtos: Produto[]) => {
@@ -44,6 +36,5 @@ export class ProdutosComponent implements OnInit {
         
       });
   };
-
 
 }

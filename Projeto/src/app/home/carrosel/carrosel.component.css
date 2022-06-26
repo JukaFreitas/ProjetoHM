@@ -1,0 +1,21 @@
+.carroselContainer {
+    position: relative;
+  
+  }
+  
+
+.carrosel .item {
+    height: 400px;
+  }
+
+
+  .carroselTexto{
+    color: white;
+ font-weight: bolder;
+
+         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+  }

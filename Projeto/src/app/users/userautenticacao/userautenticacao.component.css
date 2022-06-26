@@ -1,0 +1,11 @@
+.formCaixa{
+    padding: 20px;
+}
+
+
+
+.btEntrar{
+  display: flex;
+  justify-content: flex-end;
+}
+

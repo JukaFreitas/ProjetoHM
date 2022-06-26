@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
-import { ServusersService } from '../services/servusers.service';
+import { Router } from '@angular/router';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { UserautenticacaoComponent } from './userautenticacao/userautenticacao.component';
+import { User } from 'src/app/models/user';
+import { ServusersService } from 'src/app/services/servusers.service';
+import { UserautenticacaoComponent } from '../userautenticacao/userautenticacao.component';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class UsersComponent implements OnInit {
-
+export class UserComponent implements OnInit {
   listaUsers: User[] = [];
 
   modalRef?: BsModalRef;
@@ -29,14 +29,11 @@ export class UsersComponent implements OnInit {
   mostraME? : boolean; 
   
  
-
-  constructor(private servUsers: ServusersService, 
+  constructor(private router: Router, private servUsers: ServusersService, 
     private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    
   }
-
   leUsers() {
     this.servUsers.getUsers().subscribe((users: User[]) => {
       console.log(users)
@@ -57,6 +54,8 @@ export class UsersComponent implements OnInit {
   openModalLogin(){
     this.modalRef=this.modalService.show(UserautenticacaoComponent)
   }
+
+
 
 
 }

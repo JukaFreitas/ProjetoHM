@@ -10,7 +10,7 @@ body {
   height: 100%;
 }
 
-/* body {
+body {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -36,16 +36,41 @@ header {
 }
 
 .iconsCentro {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    padding: 5px;
+
  
 }
 
-.iconsCentro>*{
+.btDrop{
     padding: 5px;
+    border: none;
+    background-color: transparent;
+
+}
+
+.dropdownContent{
+    display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  list-style-type: none;
+}
+
+.dropdownContent a{
+    display: block;
+    color: black;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdownContent {
+    width: 200px;
+    font-size: small;
+    display: 
+    block;
 }
 /* 
  .iconsHeader {
@@ -59,4 +84,4 @@ padding: 10%;
 .iconsHeader>*{
 padding: 10px;    
 }
- */ 
+ */

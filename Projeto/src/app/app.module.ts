@@ -3,23 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersComponent } from './users/users.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ProdutosComponent } from './produtos/produtos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TiposprodutoComponent } from './tiposproduto/tiposproduto.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { UserautenticacaoComponent } from './users/userautenticacao/userautenticacao.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserregistoComponent } from './users/userregisto/userregisto.component';
+import { UserComponent } from './users/user/user.component';
+import { ProdutosgeralComponent } from './produtos/produtosgeral/produtosgeral.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { HomepagComponent } from './home/homepag/homepag.component';
+import { CarroselComponent } from './home/carrosel/carrosel.component';
+import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    ProdutosComponent,
     TiposprodutoComponent,
     UserautenticacaoComponent,
-  
+    UserComponent,
+    ProdutosgeralComponent, 
+    UserregistoComponent, HeaderComponent,
+     FooterComponent, 
+     HomepagComponent, 
+     CarroselComponent 
   ],
   imports: [
     BrowserModule,
@@ -28,11 +38,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    CarouselModule.forRoot(),
     FontAwesomeModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    CarouselModule
     
   ],
-  providers: [],
+  providers: [ { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

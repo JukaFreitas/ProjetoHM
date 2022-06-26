@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user';
 import { ServusersService } from 'src/app/services/servusers.service';
@@ -21,25 +21,31 @@ export class UserautenticacaoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.formLogin = this.formG.group({
-      email: [],
-      senha: []
+    // this.formLogin = this.formG.group({
+    //   email: [],
+    //   senha: []
 
+    // });
+
+    this.formLogin = new FormGroup({
+      email: new FormControl('', [Validators.required,
+      Validators.pattern('[A-Za-zÀ-ÿ]{1,}[@][A-Za-zÀ-ÿ]{1,}[.][A-Za-zÀ-ÿ]{2,}')]),
+      senha: new FormControl('', Validators.required)
     });
 
   }
   userLogin() {
-    const userAutenticacao: User = this.formLogin.value;
-     this.servUsers.getUsers().subscribe((users: User[])=>{
-     this.listaUsers = users;
-   })
 
+    const userAutenticacao: User = this.formLogin.value;
+    this.servUsers.getUsers().subscribe((users: User[]) => {
+      this.listaUsers = users;
+    })
     const user = this.listaUsers?.find(user => user.email === userAutenticacao.email
       && user.senha === userAutenticacao.senha);
 
-      console.log(user);
+    console.log(user);
 
-      this.formLogin.reset();
+    this.formLogin.reset();
 
 
 
@@ -59,5 +65,12 @@ export class UserautenticacaoComponent implements OnInit {
 
   }
 
+  get email(){
+    return this.formLogin.get('email')!;
+  }
+  
+  get senha(){
+    return this.formLogin.get('senha')!;
+  }
 }
 
