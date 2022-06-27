@@ -14,8 +14,7 @@ export class UserautenticacaoComponent implements OnInit {
   formLogin!: FormGroup;
   private listaUsers?: User[];
 
-  constructor(public modalRef: BsModalRef,
-    private readonly formG: FormBuilder, private servUsers: ServusersService) { }
+  constructor(public modalRef: BsModalRef, private servUsers: ServusersService) { }
 
 
 
@@ -42,6 +41,7 @@ export class UserautenticacaoComponent implements OnInit {
     })
     const user = this.listaUsers?.find(user => user.email === userAutenticacao.email
       && user.senha === userAutenticacao.senha);
+      
 
     console.log(user);
 

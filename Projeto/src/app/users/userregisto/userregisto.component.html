@@ -1,1 +1,38 @@
-<p>userregisto works!</p>
+<div class="registoCaixa">
+<div class="registoContainer">
+
+    <div class="botao">
+    <button type="button" id="btFechar"class="btn-close" aria-label="Close" (click)="voltarAtras()">
+    </button>
+</div>
+    <h3> Tornar-se membro</h3>
+    <h5> Torne-se membro – não perca as promoções e cupões bónus.</h5>
+    <form [formGroup]="formRegisto" (ngSubmit)="registoUser()">
+        <p>Nome:<input type="text" [formControlName]="'nome'"></p>
+        <small *ngIf="formRegisto.get('nome')!.touched && formRegisto.get('nome')!.invalid">
+            <span *ngIf="nome.errors?.['required']">Introduza um nome</span>
+            <span *ngIf="nome.hasError('minlength')">Tem de ter, no mínimo, 3 caracteres</span>
+        </small>
+        <p>Email:<input type="text" [formControlName]="'email'"></p>
+        <small *ngIf="formRegisto.get('email')!.touched && formRegisto.get('email')!.invalid">
+            <span *ngIf="email.errors?.['required']">Introduza um email</span>
+            <span *ngIf="email.hasError('pattern')">Email inválido</span>
+        </small>
+        <p>Senha:<input type="password" [formControlName]="'senha'"></p>
+        <small *ngIf="formRegisto.get('senha')!.touched && formRegisto.get('senha')!.invalid">
+            <span *ngIf="senha.errors?.['required']">Introduza uma senha</span>
+            <span *ngIf="senha.hasError('pattern')">Introduza uma senha com, no minimo 8 caracteres, letra maiuscula, caracter especial, número</span>
+        </small>
+        <p>Morada:<input type="text" [formControlName]="'morada'"></p>
+        <p>Código Postal:<input type="text" [formControlName]="'codigo_postal'"></p>
+        <p>País:<input type="text" [formControlName]="'pais'"></p>
+
+        <!-- <small *ngIf="formRegisto.get('email')!.touched && formRegisto.get('email')!.invalid">
+            <span *ngIf="email.errors?.['required']">Introduza um email</span>
+            <span *ngIf="nome.hasError('pattern')">Email inválido</span>
+        </small> -->
+        <p class="btEntrar"><input type="submit" value="Registar"></p>
+
+    </form>
+</div>
+</div>

@@ -1,0 +1,32 @@
+footer{
+background-color: #e4e4e4;
+display: flex;
+flex-wrap: wrap;
+justify-content:center;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100%;
+text-align:center;
+}
+
+.iconsFooter{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.iconsFooter a {
+  
+    padding: 30px;
+}
+
+
+
+.textoFooter {
+
+
+margin-bottom:  30px;
+    font-size: small;
+}
+

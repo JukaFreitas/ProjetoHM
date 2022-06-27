@@ -18,6 +18,8 @@ import { FooterComponent } from './home/footer/footer.component';
 import { HomepagComponent } from './home/homepag/homepag.component';
 import { CarroselComponent } from './home/carrosel/carrosel.component';
 import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
+import { DestaquesComponent } from './home/destaques/destaques.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
     UserregistoComponent, HeaderComponent,
      FooterComponent, 
      HomepagComponent, 
-     CarroselComponent 
+     CarroselComponent, 
+     DestaquesComponent 
+     
+     
   ],
   imports: [
     BrowserModule,

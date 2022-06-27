@@ -33,6 +33,7 @@ export class ProdutosgeralComponent implements OnInit {
       .subscribe((produtos: Produto[]) => {this.listaProdutosDestaque = 
         produtos.filter(produtos=>produtos.destaque===true)
         console.log(this.listaProdutosDestaque)
+
         
       });
   };

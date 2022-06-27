@@ -1,0 +1,25 @@
+.registoCaixa{
+    display: flex;
+    justify-content: center;
+   padding: 20px;
+}
+
+.registoContainer{
+    border: 2px solid black;
+    width: 50%;
+}
+.registoContainer h3,h5{
+    text-align: center;
+}
+
+.registoContainer form{
+    padding: 16px;
+    text-align: center;
+}
+
+.botao{
+    display: flex;
+    justify-content: end;
+
+}
+

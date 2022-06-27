@@ -16,6 +16,7 @@ body {
 }
 
 .imagemHeader {
+   
     width: 80px;
     z-index: 1;
 }
@@ -31,18 +32,15 @@ body {
 
 
 .iconsCentro {
+    padding-left: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+  
 
 
 }
 
-.iconsUser {
-    left: 0;
-
-}
 
 .btDrop {
     padding: 5px;
@@ -76,6 +74,6 @@ body {
 app-user {
 
     position: absolute;
-    top: 8px;
+    top: 10px;
     right: 16px;
 }
