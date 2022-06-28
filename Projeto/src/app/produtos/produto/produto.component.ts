@@ -35,7 +35,7 @@ tipoProduto: string="";
    console.log(this.produto)
    console.log(this.idTipoProduto)
 
-   this.getTipoPro(this.idTipoProduto);
+   this.getTipoProdut(this.idTipoProduto);
    
    })
 
@@ -45,7 +45,7 @@ tipoProduto: string="";
      
   }
 
-  getTipoPro(idTipoProduto:number){
+  getTipoProdut(idTipoProduto:number){
     
     this.servTipoProduto.getTipoProduto(idTipoProduto).subscribe((tipoProd: Tipoproduto)=>{
       this.tipoProduto = tipoProd.tipo;

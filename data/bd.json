@@ -253,6 +253,24 @@
       "codigo_postal": "",
       "pais": "",
       "id": 5
+    },
+    {
+      "nome": "joana",
+      "email": "joanam@gmail.com",
+      "senha": "108Fermentoes.",
+      "morada": "dmska",
+      "codigo_postal": "das",
+      "pais": "dsa",
+      "id": 6
+    },
+    {
+      "nome": "joana",
+      "email": "joana@gmail.com",
+      "senha": "108Fermentoes.",
+      "morada": null,
+      "codigo_postal": null,
+      "pais": null,
+      "id": 7
     }
   ]
 }

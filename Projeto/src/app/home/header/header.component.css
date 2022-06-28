@@ -51,6 +51,7 @@
     font-size: small;
     display:
         block;
+        z-index: 1;
 
 
 }
