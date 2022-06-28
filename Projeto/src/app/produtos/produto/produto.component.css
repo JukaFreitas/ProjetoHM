@@ -1,0 +1,31 @@
+.tabelaPaginaProd{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.produtoDescricao tr td{
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+
+}
+.produtoDescricao tr td img{
+
+    padding: 10px;
+
+
+}
+
+
+
+.marca{
+    font-size: 50px !important;
+    font-weight: bolder;
+}
+
+.nome{
+    font-size: 30px !important;
+    font-weight: bolder;
+
+}

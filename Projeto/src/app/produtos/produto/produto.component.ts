@@ -15,8 +15,7 @@ export class ProdutoComponent implements OnInit {
 id! : number;
 produto! : Produto;
 idTipoProduto! : number;
-tipoProduto: string="  "; 
-
+tipoProduto: string=""; 
   constructor(private servTipoProduto :ServtiposprodutosService  ,private rotaActiva: ActivatedRoute, private servProdutdos: ServprodutosService) { }
 
   ngOnInit(): void {
@@ -34,8 +33,9 @@ tipoProduto: string="  ";
    this.produto = prod; 
    this.idTipoProduto = Number(this.produto.tipoProdId);
    console.log(this.produto)
+   console.log(this.idTipoProduto)
 
-   this.getTipoProduto(this.idTipoProduto);
+   this.getTipoPro(this.idTipoProduto);
    
    })
 
@@ -45,10 +45,9 @@ tipoProduto: string="  ";
      
   }
 
-  getTipoProduto(id:number){
-
+  getTipoPro(idTipoProduto:number){
     
-    this.servTipoProduto.getTipoProduto(this.id).subscribe((tipoProd: Tipoproduto)=>{
+    this.servTipoProduto.getTipoProduto(idTipoProduto).subscribe((tipoProd: Tipoproduto)=>{
       this.tipoProduto = tipoProd.tipo;
       console.log(this.tipoProduto);
 
