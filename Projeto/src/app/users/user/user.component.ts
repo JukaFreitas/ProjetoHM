@@ -4,6 +4,7 @@ import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user';
@@ -21,8 +22,7 @@ export class UserComponent implements OnInit {
   modalRef?: BsModalRef;
 
   faWishlist = faClipboardList;
-  faLogin = faUser;
-  faLogout = faArrowAltCircleRight;
+  faLog = faArrowAltCircleRight;
   faRegisto = faUserPlus;
   faPerfil = faUserEdit;
 
@@ -34,6 +34,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   leUsers() {
     this.servUsers.getUsers().subscribe((users: User[]) => {
       console.log(users)
@@ -53,6 +54,8 @@ export class UserComponent implements OnInit {
 
   openModalLogin(){
     this.modalRef=this.modalService.show(UserautenticacaoComponent)
+   
+
   }
 
 

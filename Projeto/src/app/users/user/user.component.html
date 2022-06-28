@@ -1,20 +1,17 @@
 
     <div class="iconsHeader">
-        <button>
+        <button *ngIf="mostraME" >
             <fa-icon [icon]="faWishlist"></fa-icon>
         </button>
         <button type="button" 
         class="button" (click)="openModalLogin()">
-            <fa-icon [icon]="faLogin"></fa-icon>
-        </button>
-        <button>
-            <fa-icon [icon]="faLogout"></fa-icon>
+            <fa-icon [icon]="faLog"></fa-icon>
         </button>
         <button routerLink="/userregisto" routerLinkActive="activa" type="button" 
         class="button">
             <fa-icon [icon]="faRegisto"></fa-icon>
         </button>
         <button>
-            <fa-icon [icon]="faPerfil"></fa-icon>
+            <fa-icon *ngIf="mostraME"  [icon]="faPerfil"></fa-icon>
         </button>
     </div>

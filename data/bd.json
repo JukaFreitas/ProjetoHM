@@ -10,7 +10,7 @@
       "descricao": "We heard somewhere that we should enjoy the simple things in life. That's why we immediately knew this Song For The Mute white T-shirt would bring more fun to our days. Even if it means going back to the office.",
       "foto_principal": "graphic_print_tshirt_1.jpg",
       "foto_secundaria": "graphic_print_tshirt_2.jpg",
-      "destaque": true,
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -36,7 +36,7 @@
       "descricao": "For the modern gentleman. Crafted from a linen blend, this Moulin suit jacket from Jacquemus showcases the designer's ability to deliver sartorial designs with a contemporary twist. Suit up.",
       "foto_principal": "moulin_suit_jacket_1.jpg",
       "foto_secundaria": "moulin_suit_jacket_2.jpg",
-      "destaque": true,
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -88,7 +88,7 @@
       "descricao": "Blue cotton and linen blend slim fit chinos from Pt01 featuring a pleated waist, a button and zip fly, a waistband with belt loops, side pockets and a regular length.",
       "foto_principal": "slim_fit_chinos_1.jpg",
       "foto_secundaria": "slim_fit_chinos_2.jpg",
-      "destaque": true,
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -114,7 +114,7 @@
       "descricao": "Imperial-blue, cotton and polyamide-blend, classic hood, long sleeves, oversize frame, front zip fastening",
       "foto_principal": "oversized_hooded_jacket_1.jpg",
       "foto_secundaria": "oversized_hooded_jacket_2.jpg",
-      "destaque": false,
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -140,7 +140,7 @@
       "descricao": "Monarch orange feather down oversized padded coat from Canada Goose featuring a hood, long sleeves, a snap button over zip concealed front fastening, a logo patch at the sleeve and a metallic logo print at the sleeve.",
       "foto_principal": "oversized_padded_coat_1.jpg",
       "foto_secundaria": "oversized_padded_coat_2.jpg",
-      "destaque": false,
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -166,7 +166,7 @@
       "descricao": "Azure-blue, cotton-blend, slim cut, front button fastening, two diagonal pockets to the sides, two rear patch pockets",
       "foto_principal": "slim_cut_trousers_1.jpg",
       "foto_secundaria": "slim_cut_trousers_2.jpg",
-      "destaque": false,
+      "destaque": true,
       "categoria": "Homem"
     },
     {

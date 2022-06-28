@@ -1,4 +1,12 @@
-
+.destaquesCaixa{
+  
+    display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+   
+}
 
 .destaquesContainer{ 
     display: block;
@@ -9,4 +17,15 @@
     display: inline;
 }
 
+.destaqueImg img:hover {
+    border: 2px solid red;
+  }
 
+
+.destaquesTexto p {
+  
+    font-size: larger;
+    font-weight: bolder;
+ 
+
+}

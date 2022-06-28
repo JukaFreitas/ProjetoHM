@@ -17,8 +17,6 @@ export class UserautenticacaoComponent implements OnInit {
   constructor(public modalRef: BsModalRef, private servUsers: ServusersService) { }
 
 
-
-
   ngOnInit(): void {
     // this.formLogin = this.formG.group({
     //   email: [],
@@ -45,23 +43,11 @@ export class UserautenticacaoComponent implements OnInit {
 
     console.log(user);
 
+
     this.formLogin.reset();
 
 
 
-    // this.servUsers.getUsers().subscribe({
-    //   next: (users: User[]) => {
-    //     users.find(user => user.email === userAutenticacao.email
-    //       && user.senha === userAutenticacao.senha);
-    //     this.listaUsers = users;
-    //     console.log(this.listaUsers)
-
-    //   },
-    //   error: (error) => {
-    //     console.log("Ocrorreu um erro:" + error)
-    //   }
-    // })
-    // this.formLogin.reset();
 
   }
 

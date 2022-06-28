@@ -12,13 +12,13 @@ import { UserautenticacaoComponent } from './users/userautenticacao/userautentic
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserregistoComponent } from './users/userregisto/userregisto.component';
 import { UserComponent } from './users/user/user.component';
-import { ProdutosgeralComponent } from './produtos/produtosgeral/produtosgeral.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HomepagComponent } from './home/homepag/homepag.component';
 import { CarroselComponent } from './home/carrosel/carrosel.component';
 import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
 import { DestaquesComponent } from './home/destaques/destaques.component';
+import { ProdutoComponent } from './produtos/produto/produto.component';
 
 
 @NgModule({
@@ -26,13 +26,12 @@ import { DestaquesComponent } from './home/destaques/destaques.component';
     AppComponent,
     TiposprodutoComponent,
     UserautenticacaoComponent,
-    UserComponent,
-    ProdutosgeralComponent, 
+    UserComponent, 
     UserregistoComponent, HeaderComponent,
      FooterComponent, 
      HomepagComponent, 
      CarroselComponent, 
-     DestaquesComponent 
+     DestaquesComponent, ProdutoComponent 
      
      
   ],

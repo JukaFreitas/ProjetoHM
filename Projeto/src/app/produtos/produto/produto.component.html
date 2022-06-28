@@ -1,0 +1,17 @@
+
+<p *ngIf="!produto">Não existem sobre o produto.</p>
+<table id="tabelaPaginaProd" *ngIf="produto"><table class="destaquesContainer col-md-10 col-lg-10">
+    <tbody>
+    <tr>
+      
+      <td>{{produto.marca}}</td>
+      <td>{{produto.nome}}</td>
+      <td><img src="/assets/{{ produto.foto_principal }}" /></td>
+      <td><img src="/assets/{{ produto.foto_secundaria }}" /></td>
+      <td>{{tipoProduto}}&nbsp;{{produto.cor}}</td>
+      <td>{{produto.preco}}€</td>
+      <td>{{produto.descricao}}</td>
+
+    </tr>
+</tbody>
+  </table>

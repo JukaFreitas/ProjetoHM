@@ -21,13 +21,21 @@
 </div> -->
 
 
-
-<table  class="destaquesContainer">
-    <tr>
-        <td class="destaqueImg" *ngFor="let produto of listaProdutosDestaque" >
-            <img src="/assets/{{produto.foto_principal}}" >
+<div class="destaquesCaixa">
+    <div class="destaquesTexto">
+      <p>DESTAQUES</p>
+    </div>
+    <table class="destaquesContainer col-md-10 col-lg-10">
+      <tr>
+        <button type="button" 
+        class="button" routerLink="/produto,produto.id" routerLinkActive="activa">
+        <td  class="destaqueImg" *ngFor="let produto of listaProdutosDestaque">
+            <a [routerLink]="['/produto', produto.id]">
+ 
+            <img src="/assets/{{ produto.foto_principal }}" /></a>
+          
         </td>
-    </tr>
-  
-</table>
-
+        </button>
+      </tr>
+    </table>
+  </div>
