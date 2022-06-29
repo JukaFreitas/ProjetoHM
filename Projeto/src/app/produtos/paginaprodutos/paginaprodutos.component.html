@@ -1,6 +1,6 @@
 <p class="genero">{{genero}}</p>
- <p *ngIf="listaProdutosGenero.length===0">Não existem produtos nesta categoria</p> 
- <p *ngIf="listaProdutosGenero.length!==0"></p>
-<li *ngFor="let listaProduto of listaProdutosGenero">
+ <p *ngIf="listaFinal.length===0">Não existem produtos nesta categoria</p> 
+ <p *ngIf="listaFinal.length!==0"></p>
+<li class="imagemProdu" *ngFor="let listaProduto of listaFinal">
 <img src="/assets/{{ listaProduto.foto_principal }}" />
 </li>

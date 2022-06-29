@@ -12,71 +12,84 @@ import { ServtiposprodutosService } from '../../services/servtiposprodutos.servi
   styleUrls: ['./paginaprodutos.component.css']
 })
 export class PaginaprodutosComponent implements OnInit {
- genero! : string;
- tipoProduto! : string; 
- listaProdutosGenero :Produto[] = [];
- listaTiposProduto : Tipoproduto[] = [];
- idTipoProduto!: number; 
- 
-  constructor(private router : Router, private rotaActiva: ActivatedRoute, private servProdutos : ServprodutosService, private servTipoProduto : ServtiposprodutosService ){ }
+  genero!: string;
+  tipoProduto!: string;
+  listaProdutosGenero: Produto[] = [];
+  listaTiposProduto: Tipoproduto[] = [];
+  idTipoProduto!: number;
+
+  listaFinal : Produto[] =[]
+
+  constructor(private router: Router, private rotaActiva: ActivatedRoute, private servProdutos: ServprodutosService, private servTipoProduto: ServtiposprodutosService) { }
 
   ngOnInit(): void {
-   this.getProdutosGenero();
-  //  this.getTipoProduto(this.listaProdutosGenero);
-  this.filtraProduto(); 
-  //  https://stackoverflow.com/questions/41678356/router-navigate-does-not-call-ngoninit-when-same-page
-   this.router.routeReuseStrategy.shouldReuseRoute = function() {
-    return false;
-};
-    
+    this.rotaActiva.paramMap.subscribe(params => {
+      this.genero = params.get('genero')!
+    })
+    if(this.genero==="Todos"){
+
+
+
+    }
+
+    this.getProdutosGenero();
+    this.getIdTipoProduto();
+    // this.filtraProduto(); 
+    //  https://stackoverflow.com/questions/41678356/router-navigate-does-not-call-ngoninit-when-same-page
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+
 
   };
 
-  getProdutosGenero(){
-    this.rotaActiva.paramMap.subscribe(params => { 
-      this.genero = params.get('genero')!; 
-      console.log(this.genero)
-    })
-    if(this.genero){
+
+  getProdutosGenero() {
       console.log(this.genero)
       this.servProdutos.getProdutos()
-      .subscribe((produtos :Produto[])=>{
-        this.listaProdutosGenero = produtos.filter(p=>p.categoria===this.genero);  
+        .subscribe((produtos: Produto[]) => {
+          this.listaProdutosGenero = produtos.filter(p => p.categoria === this.genero);
 
-        console.log(this.listaProdutosGenero)
+          // console.log(this.listaProdutosGenero)
 
 
-      })
+        })
     }
-  }
 
-  getTipoProduto(lista : Produto[]){
-    this.rotaActiva.paramMap.subscribe(params => { 
-      this.tipoProduto = params.get('tipoProduto')!; 
+
+  getIdTipoProduto() {
+    this.rotaActiva.paramMap.subscribe(params => {
+      this.tipoProduto = params.get('tipoProduto')!;
       console.log(this.tipoProduto)
-      this.servTipoProduto.getTiposProduto().subscribe((tiposProduto : Tipoproduto[])=>{
-        this.listaTiposProduto = tiposProduto.filter(tp=>tp.tipo === this.tipoProduto)
-        
+      this.servTipoProduto.getTiposProduto().subscribe((tiposProduto: Tipoproduto[]) => {
+        this.listaTiposProduto = tiposProduto.filter(tp => tp.tipo === this.tipoProduto)
+        const produtoTipo = this.listaTiposProduto.find(tp => tp)
+        this.idTipoProduto = Number(produtoTipo?.id)
+        console.log(this.idTipoProduto)
 
-        console.log(this.listaTiposProduto);
+        this.listaFinal= this.listaProdutosGenero.filter(pg=> pg.tipoProdId === this.idTipoProduto)
+        console.log(this.listaFinal);
 
       })
     })
   }
 
-    filtraProduto(){
-      this.rotaActiva.paramMap.subscribe(params => { 
-        this.tipoProduto = params.get('tipoProduto')!; 
-        console.log(this.tipoProduto)
+  filtraProduto() {
+    this.rotaActiva.paramMap.subscribe(params => {
+      this.tipoProduto = params.get('tipoProduto')!;
+      console.log(this.tipoProduto)
 
-       console.log( this.servTipoProduto.filtraTipoProduto(this.tipoProduto).subscribe())
+      this.servTipoProduto
+        .filtraTipoProduto(this.tipoProduto).subscribe((tp: Tipoproduto) => {
+          console.log(tp)
+
+          console.log(this.listaTiposProduto?.find(user => user.tipo === this.tipoProduto));
+        })
 
 
-      })
+    })
 
 
-    }
+  }
 
-
-  
 }
