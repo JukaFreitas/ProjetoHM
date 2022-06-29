@@ -3,5 +3,6 @@ export const subMenuCrianca: string[] = [
     " Menino | 6-14 Anos",
     "Bebé Menina | 3 Meses - 5 Anos",
     "Bebé Menino | 3 Meses - 5 Anos",
-    "Mini | 0-12 Meses"
+    "Mini | 0-12 Meses",
+    "Todos"
 ]

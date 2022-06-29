@@ -19,6 +19,7 @@ import { CarroselComponent } from './home/carrosel/carrosel.component';
 import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
 import { DestaquesComponent } from './home/destaques/destaques.component';
 import { ProdutoComponent } from './produtos/produto/produto.component';
+import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaprodutos.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ProdutoComponent } from './produtos/produto/produto.component';
      FooterComponent, 
      HomepagComponent, 
      CarroselComponent, 
-     DestaquesComponent, ProdutoComponent 
+     DestaquesComponent, ProdutoComponent, PaginaprodutosComponent 
      
      
   ],

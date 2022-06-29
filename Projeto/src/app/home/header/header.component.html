@@ -4,7 +4,7 @@
             <button class="btDrop">Homem</button>
             <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuHomem of opcoesMenuHomem">
-                    <a href="#">{{opcaoMenuHomem}}</a>
+                    <a [routerLink]="['/paginaProdutos',homem, opcaoMenuHomem]">{{opcaoMenuHomem}}</a>
             </div>
         </div>
         <div class="separadorHeader">|</div>
@@ -12,7 +12,7 @@
             <button class="btDrop">Mulher</button>
             <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuMulher of opcoesMenuMulher">
-                    <a href="#">{{opcaoMenuMulher}}</a>
+                <a [routerLink]="['/paginaProdutos',mulher, opcaoMenuMulher]">{{opcaoMenuMulher}}</a>
             </div>
         </div>
         <img src="../assets/logo.png" class="imagemHeader">
@@ -20,7 +20,7 @@
             <button class="btDrop">Criança</button>
             <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuCrianca of opcoesMenuCrianca">
-                    <a href="#">{{opcaoMenuCrianca}}</a>
+                    <a [routerLink]="['/paginaProdutos',crianca, opcaoMenuCrianca]">{{opcaoMenuCrianca}}</a>
             </div>
         </div>
         <div class="separadorHeader">|</div>
@@ -28,7 +28,7 @@
             <button class="btDrop">Acessórios</button>
             <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuAcessorio of opcoesMenuAcessorios">
-                    <a href="#">{{opcaoMenuAcessorio}}</a>
+                    <a [routerLink]="['/paginaProdutos',acessorios, opcaoMenuAcessorio]">{{opcaoMenuAcessorio}}</a>
             </div>
         </div>
         <app-user></app-user> 

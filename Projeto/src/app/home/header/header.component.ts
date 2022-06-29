@@ -15,6 +15,10 @@ export class HeaderComponent implements OnInit {
   opcoesMenuMulher : string[] = subMenuMulher; 
   opcoesMenuCrianca :string[] = subMenuCrianca;   
   opcoesMenuAcessorios :string[] = subMenuAcessorios; 
+  mulher: string = "Mulher"; 
+  homem:string="Homem";
+  crianca:string="Criança"
+  acessorios:string="Acessórios";
 
   constructor() { }
 

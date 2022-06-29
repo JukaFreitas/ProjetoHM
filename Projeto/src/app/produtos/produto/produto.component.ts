@@ -16,20 +16,18 @@ id! : number;
 produto! : Produto;
 idTipoProduto! : number;
 tipoProduto: string=""; 
-  constructor(private servTipoProduto :ServtiposprodutosService  ,private rotaActiva: ActivatedRoute, private servProdutdos: ServprodutosService) { }
+  constructor(private servTipoProduto :ServtiposprodutosService  ,private rotaActiva: ActivatedRoute, private servProdutos: ServprodutosService) { }
 
   ngOnInit(): void {
     
-     // testar a existência do parâmetro com o método has()
      this.rotaActiva.paramMap.subscribe(params => { 
-      // console.log(params);
        this.id = Number (params.get('id')); 
      })
      // quando o id não é numérico, o valor retornado é NaN (Not a Number)
      // console.log(typeof this.id); // number se id=NaN
      if (!isNaN(this.id)) {
     // console.log( this.servProdutdos.getProduto(this.id).subscribe(produto=> produto.id === this.id))
-   this.servProdutdos.getProduto(this.id).subscribe((prod : Produto)=>{
+   this.servProdutos.getProduto(this.id).subscribe((prod : Produto)=>{
    this.produto = prod; 
    this.idTipoProduto = Number(this.produto.tipoProdId);
    console.log(this.produto)
