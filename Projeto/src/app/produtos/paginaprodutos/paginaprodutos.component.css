@@ -1,14 +1,24 @@
-.genero{
+/* .genero{
     text-transform: capitalize;
     text-align: center;
     padding: 20px;
+} */
+
+.paginaProdutosCaixa{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+
+
 }
 
-:host{
-    display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-   
+.paginaProdutosContainer{
+
+display: inline;
+
 }
+
+

@@ -1,6 +1,37 @@
-<p class="genero">{{genero}}</p>
+<!-- <p class="genero">{{genero}}</p>
  <p *ngIf="listaFinal.length===0">Não existem produtos nesta categoria</p> 
  <p *ngIf="listaFinal.length!==0"></p>
 <li class="imagemProdu" *ngFor="let listaProduto of listaFinal">
 <img src="/assets/{{ listaProduto.foto_principal }}" />
-</li>
+</li> -->
+
+
+<p *ngIf="listaFinal.length===0">Não existem produtos nesta categoria</p>
+
+
+<div class="paginaProdutosCaixa">
+    <div class="genero">
+        <p>{{genero}}</p>
+    </div>
+    <p class="paginaProdutosContainer" *ngIf="listaFinal.length!==0"></p>
+    <div>Total de Resultados: {{ listaFinal.length }}
+        <section class="paginaProdutosImagem" *ngFor="let listaProduto of listaFinal">
+
+            <img src="/assets/{{ listaProduto.foto_principal }}" />
+
+            <p class="marca">{{listaProduto.marca}}</p>
+            <p class="nome">{{listaProduto.nome}}</p>
+            <p>{{listaProduto.preco}}€</p>
+            <p> <fa-icon [icon]="faStar"></fa-icon>  </p>
+
+        </section>
+    </div>
+</div>
+
+
+<div>
+    <p *ngIf="tiposProduto.length===0">Não existem produtos nesta categoria</p>
+    <p class="" *ngIf="tiposProduto.length!==0"></p>
+    <p class="" *ngFor="let tipoProduto of tiposProduto"><input type="radio" value="tipoProduto" name="tipoProduto"> {{tipoProduto.tipo}}</p>
+        
+</div>

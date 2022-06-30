@@ -198,11 +198,15 @@
     },
     {
       "id": 4,
-      "tipo": "Sweatshirt"
+      "tipo": "Sweatshirts"
     },
     {
       "id": 5,
       "tipo": "Calças"
+    },
+    {
+      "id":6,
+      "tipo":"Todos"
     }
   ],
   "users": [
