@@ -35,7 +35,7 @@
     <p>Total de Resultados: {{ listaFinal!.length }} </p>
     <section class="container">
         <app-card [dados]="listaProduto" *ngFor="let listaProduto of listaFinal"></app-card>
-        <p><button (click)="next10()">Next 10</button></p>
+        <p><button *ngIf="mostraIcon" (click)="next10()">Next 10</button></p>
     </section>
    
     

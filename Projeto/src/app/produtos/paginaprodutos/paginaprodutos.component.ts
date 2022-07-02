@@ -21,13 +21,15 @@ export class PaginaprodutosComponent implements OnInit {
   idTipoProduto!: number;
   listaCores: string[] = [];
 
-  listaFinal: Produto[] | null= [];
+  listaFinal: Produto[] | null = [];
 
-  listaProdutosMostrar : Produto[] | null= [];
+  listaProdutosMostrar: Produto[] | null = [];
 
-  initialRecord : number = 0;
-  numberRecords : number = 6;
-  totalRegistos! : number;
+  initialRecord: number = 0;
+  numberRecords: number = 6;
+  totalRegistos!: number;
+
+  mostraIcon: boolean = false;
 
 
 
@@ -36,7 +38,7 @@ export class PaginaprodutosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.readPagePosts(this.initialRecord,this.numberRecords);
+    this.readPagePosts(this.initialRecord, this.numberRecords);
 
     this.getProdutosGenero();
     this.getIdTipoProduto();
@@ -106,7 +108,7 @@ export class PaginaprodutosComponent implements OnInit {
   getTiposProdutos() {
     this.servTipoProduto.getTiposProduto().subscribe({
       next: (produtosTipos: Tipoproduto[]) => {
-        this.tiposProduto = produtosTipos.filter(p=>!p.tipo.includes!("Todos"));
+        this.tiposProduto = produtosTipos.filter(p => !p.tipo.includes!("Todos"));
 
         console.log(this.tiposProduto)
       }
@@ -116,7 +118,7 @@ export class PaginaprodutosComponent implements OnInit {
   getProtudoCor() {
     this.servProdutos.getProdutos()
       .subscribe((produtos: Produto[]) => {
-        this.listaCores = produtos.map(p=>p.cor)
+        this.listaCores = produtos.map(p => p.cor)
         this.listaCores = this.listaCores.filter(
           (cor, c) => c === this.listaCores.indexOf(cor)
         );
@@ -126,22 +128,31 @@ export class PaginaprodutosComponent implements OnInit {
       })
   }
 
-  readPagePosts(iniRec : number, numRec : number) {
+  readPagePosts(iniRec: number, numRec: number) {
 
     console.log(iniRec)
-    this.servProdutos.getProdutosPage(iniRec,numRec).subscribe({
+    this.servProdutos.getProdutosPage(iniRec, numRec).subscribe({
       next: (response) => {
-        this.listaFinal=response.body;
-        console.log(this.listaFinal)
-        this.totalRegistos=Number(response.headers.get("X-Total-Count"));
-        // console.log(response.headers.get("X-Total-Count"));
-        console.log(this.listaFinal);
+        if (this.listaFinal!.length < 6) {
+          this.mostraIcon = false;
+        }
+        else{
+
+          this.listaFinal = response.body;
+          console.log(this.listaFinal)
+          this.totalRegistos = Number(response.headers.get("X-Total-Count"));
+          // console.log(response.headers.get("X-Total-Count"));
+          console.log(this.listaFinal);
+          this.mostraIcon=true
+        }
       }
     });
+
+
   }
   next10() {
-    this.initialRecord+=6;
-    this.readPagePosts(this.initialRecord,this.numberRecords);
+    this.initialRecord += 6;
+    this.readPagePosts(this.initialRecord, this.numberRecords);
   }
 
 }
