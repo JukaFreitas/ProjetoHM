@@ -4,34 +4,39 @@
 <li class="imagemProdu" *ngFor="let listaProduto of listaFinal">
 <img src="/assets/{{ listaProduto.foto_principal }}" />
 </li> -->
+<div class="allcheckBox">
+    <div class="checkBox">
+        <p *ngIf="tiposProduto.length===0">Não existem produtos nesta categoria</p>
+        <div class="checkBoxTitulo">
+            <p>Tipo</p>
+        </div>
+        <p class="" *ngIf="tiposProduto.length!==0"></p>
+        <p class="" *ngFor="let tipoProduto of tiposProduto"><input type="radio" value="tipoProduto" name="tipoProduto">
+            {{tipoProduto.tipo}}</p>
 
-
-<p *ngIf="listaFinal.length===0">Não existem produtos nesta categoria</p>
-
-
-<div class="paginaProdutosCaixa">
-    <div class="genero">
-        <p>{{genero}}</p>
     </div>
-    <p class="paginaProdutosContainer" *ngIf="listaFinal.length!==0"></p>
-    <div>Total de Resultados: {{ listaFinal.length }}
-        <section class="paginaProdutosImagem" *ngFor="let listaProduto of listaFinal">
 
-            <img src="/assets/{{ listaProduto.foto_principal }}" />
+    <div class="checkBox">
+        <p *ngIf="listaCores.length===0">Não existem produtos nesta categoria</p>
+        <p class="checkBoxTitulo">Cor</p>
+        <p class="" *ngIf="listaCores.length!==0"></p>
+        <p class="" *ngFor="let listaCor of listaCores"><input type="radio" value="tipoProduto" name="tipoProduto">
+            {{listaCor}}</p>
 
-            <p class="marca">{{listaProduto.marca}}</p>
-            <p class="nome">{{listaProduto.nome}}</p>
-            <p>{{listaProduto.preco}}€</p>
-            <p> <fa-icon [icon]="faStar"></fa-icon>  </p>
-
-        </section>
     </div>
 </div>
+<div class="genero">
+    <p>{{genero}}</p><br>
+</div>
+<p *ngIf="listaFinal!.length===0">Não existem produtos nesta categoria</p>
 
-
-<div>
-    <p *ngIf="tiposProduto.length===0">Não existem produtos nesta categoria</p>
-    <p class="" *ngIf="tiposProduto.length!==0"></p>
-    <p class="" *ngFor="let tipoProduto of tiposProduto"><input type="radio" value="tipoProduto" name="tipoProduto"> {{tipoProduto.tipo}}</p>
-        
+<div class="paginaProdutosCaixa">
+    <p class="paginaProdutosContainer" *ngIf="listaFinal!.length!==0"></p>
+    <p>Total de Resultados: {{ listaFinal!.length }} </p>
+    <section class="container">
+        <app-card [dados]="listaProduto" *ngFor="let listaProduto of listaFinal"></app-card>
+        <p><button (click)="next10()">Next 10</button></p>
+    </section>
+   
+    
 </div>

@@ -54,4 +54,9 @@ export class ServprodutosService {
       catchError(this.processaErro)); 
 
   }
+
+  
+  getProdutosPage(initialRecord : number, numberRecords : number) {
+    return this.http.get<Produto[]>(`${this.urlAPI}?_start=${initialRecord}&_limit=${numberRecords}`, { observe: 'response' });
+  }
 }

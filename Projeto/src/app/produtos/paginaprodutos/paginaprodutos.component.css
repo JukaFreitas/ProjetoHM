@@ -1,24 +1,41 @@
-/* .genero{
-    text-transform: capitalize;
+ .genero{
     text-align: center;
     padding: 20px;
-} */
+} 
 
 .paginaProdutosCaixa{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
-    flex-direction:column;
-    align-items: center;
-    text-align: center;
+
 
 
 }
 
-.paginaProdutosContainer{
+.paginaProdutosDetalhe{
+    display: block;
+}
 
-display: inline;
+
+.allcheckBox{
+    display: block;
+
 
 }
+.checkBox{
+    border: 1px solid black;
+padding: 0;
+    width: 10%;
+
+}
+
+ .checkBoxTitulo{
+    margin:0; 
+background-color: orangered;
+text-align: center;
+
+} 
+
+
 
 

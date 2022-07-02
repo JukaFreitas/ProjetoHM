@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tipoproduto } from '../../models/tipoproduto';
 import { Produto } from '../../models/produto';
 import { ServprodutosService } from '../../services/servprodutos.service';
 import { filter } from 'rxjs';
 import { ServtiposprodutosService } from '../../services/servtiposprodutos.service';
-import {  faStar } from '@fortawesome/free-regular-svg-icons';
+import { Card } from 'src/app/models/cardType';
 @Component({
   selector: 'app-paginaprodutos',
   templateUrl: './paginaprodutos.component.html',
@@ -19,23 +19,38 @@ export class PaginaprodutosComponent implements OnInit {
   tiposProduto: Tipoproduto[] = [];
 
   idTipoProduto!: number;
-  faStar = faStar;
+  listaCores: string[] = [];
 
-  listaFinal: Produto[] = []
+  listaFinal: Produto[] | null= [];
+
+  listaProdutosMostrar : Produto[] | null= [];
+
+  initialRecord : number = 0;
+  numberRecords : number = 6;
+  totalRegistos! : number;
+
+
+
 
   constructor(private router: Router, private rotaActiva: ActivatedRoute, private servProdutos: ServprodutosService, private servTipoProduto: ServtiposprodutosService) { }
 
   ngOnInit(): void {
 
+    this.readPagePosts(this.initialRecord,this.numberRecords);
 
     this.getProdutosGenero();
     this.getIdTipoProduto();
     this.getTiposProdutos();
+    this.getProtudoCor();
+
+
     // this.filtraProduto(); 
     //  https://stackoverflow.com/questions/41678356/router-navigate-does-not-call-ngoninit-when-same-page
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
+
+
 
 
   };
@@ -63,7 +78,7 @@ export class PaginaprodutosComponent implements OnInit {
         this.genero = params.get('genero')!;
         this.servProdutos.getProdutos()
           .subscribe((produtos: Produto[]) => {
-          this.listaFinal=  this.listaProdutosGenero =
+            this.listaFinal = this.listaProdutosGenero =
               produtos.filter(p => p.categoria === this.genero);
 
 
@@ -88,13 +103,46 @@ export class PaginaprodutosComponent implements OnInit {
   };
 
 
-  getTiposProdutos(){
+  getTiposProdutos() {
     this.servTipoProduto.getTiposProduto().subscribe({
-      next: (produtosTipos : Tipoproduto[]) => {
-        this.tiposProduto=produtosTipos;
+      next: (produtosTipos: Tipoproduto[]) => {
+        this.tiposProduto = produtosTipos.filter(p=>!p.tipo.includes!("Todos"));
+
         console.log(this.tiposProduto)
       }
     });
   }
+
+  getProtudoCor() {
+    this.servProdutos.getProdutos()
+      .subscribe((produtos: Produto[]) => {
+        this.listaCores = produtos.map(p=>p.cor)
+        this.listaCores = this.listaCores.filter(
+          (cor, c) => c === this.listaCores.indexOf(cor)
+        );
+
+        console.log(this.listaCores)
+
+      })
+  }
+
+  readPagePosts(iniRec : number, numRec : number) {
+
+    console.log(iniRec)
+    this.servProdutos.getProdutosPage(iniRec,numRec).subscribe({
+      next: (response) => {
+        this.listaFinal=response.body;
+        console.log(this.listaFinal)
+        this.totalRegistos=Number(response.headers.get("X-Total-Count"));
+        // console.log(response.headers.get("X-Total-Count"));
+        console.log(this.listaFinal);
+      }
+    });
+  }
+  next10() {
+    this.initialRecord+=6;
+    this.readPagePosts(this.initialRecord,this.numberRecords);
+  }
+
 }
 
