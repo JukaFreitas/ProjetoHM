@@ -34,7 +34,7 @@ export class UserregistoComponent implements OnInit {
         console.log(user);
         this.formRegisto.reset();
    
-      }
+      } 
     ) 
 
 

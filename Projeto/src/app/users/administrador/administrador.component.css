@@ -1,0 +1,26 @@
+
+form{
+    padding-top: 10px;
+}
+form input {
+
+    width: 50%;
+
+}
+
+label {
+    text-align: right;
+    width: 100px;
+    line-height: 26px;
+  }
+  
+  input select{
+    height: 20px;
+ 
+  }
+
+  .btRegistar {
+    padding: 20px;
+    width: 20%;
+
+  }

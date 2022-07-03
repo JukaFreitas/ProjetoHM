@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as faStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card',
@@ -9,6 +10,8 @@ import { faStar } from '@fortawesome/free-regular-svg-icons';
 export class CardComponent implements OnInit {
   @Input() dados : any;
   faStar = faStar;
+  faStarSolid = faStarSolid;
+  toggle:boolean= false;
 
 
   constructor() { }
@@ -16,4 +19,10 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  addWishlist(){
+   this.faStar = faStarSolid;
+   }
+
+
+  }
+

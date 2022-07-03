@@ -1,15 +1,120 @@
 <header>
+  <div class="centraHeader">
+    <div class="col-lg-4"></div>
+    <div class="navbar col-lg-6">
+      <nav>
+        <ul>
+          <div class="iconsCentro">
+            <div class="dropdown">
+              <button class="btDrop">Homem</button>
+              <div class="dropdownContent">
+                <li *ngFor="let opcaoMenuHomem of opcoesMenuHomem">
+                  <a
+                    [routerLink]="['/paginaProdutos', homem, opcaoMenuHomem]"
+                    >{{ opcaoMenuHomem }}</a
+                  >
+                </li>
+              </div>
+            </div>
+            <li class="separadorHeader">|</li>
+            <div class="dropdown">
+              <button class="btDrop">Mulher</button>
+              <div class="dropdownContent">
+                <li *ngFor="let opcaoMenuMulher of opcoesMenuMulher">
+                  <a
+                    [routerLink]="['/paginaProdutos', mulher, opcaoMenuMulher]"
+                    >{{ opcaoMenuMulher }}</a
+                  >
+                </li>
+              </div>
+            </div>
+            <img src="../assets/logo.png" class="imagemHeader" />
+            <div class="dropdown">
+              <button class="btDrop">Criança</button>
+              <div class="dropdownContent">
+                <li *ngFor="let opcaoMenuCrianca of opcoesMenuCrianca">
+                  <a
+                    [routerLink]="[
+                      '/paginaProdutos',
+                      crianca,
+                      opcaoMenuCrianca
+                    ]"
+                    >{{ opcaoMenuCrianca }}</a
+                  >
+                </li>
+              </div>
+            </div>
+            <li class="separadorHeader">|</li>
+            <div class="dropdown">
+              <button class="btDrop">Acessórios</button>
+              <div class="dropdownContent">
+                <li *ngFor="let opcaoMenuAcessorio of opcoesMenuAcessorios">
+                  <a
+                    [routerLink]="[
+                      '/paginaProdutos',
+                      acessorios,
+                      opcaoMenuAcessorio
+                    ]"
+                    >{{ opcaoMenuAcessorio }}</a
+                  >
+                </li>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
 
-  <app-header></app-header>
+    <div class="iconsHeader">
+      <button *ngIf="mostraME">
+        <fa-icon [icon]="faWishlist"></fa-icon>
+      </button>
+      <button type="button" class="button" (click)="openModalLogin()">
+        <fa-icon [icon]="faLog"></fa-icon>
+      </button>
+      <button
+        routerLink="/userregisto"
+        routerLinkActive="activa"
+        type="button"
+        class="button"
+      >
+        <fa-icon [icon]="faRegisto"></fa-icon>
+      </button>
+      <button>
+        <fa-icon *ngIf="mostraME" [icon]="faPerfil"></fa-icon>
+      </button>
+    </div>
+  </div>
 </header>
 
-
 <main>
+  <router-outlet> </router-outlet>
 
-  <router-outlet>
-  </router-outlet>
+  <footer>
+    <div class="iconsFooter">
+      <a href="">
+        <fa-icon [icon]="faTwitter"></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon [icon]="faFacebook"></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon [icon]="faInstagram"></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon [icon]="faYoutube"></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon [icon]="faPinterest"></fa-icon>
+      </a>
+    </div>
+
+    <p class="textoFooter">
+      O conteúdo deste site está protegido por copyright e é propriedade da H &
+      M Hennes & Mauritz AB. O conceito de negócio da H&M é a oferta de moda e
+      qualidade aos melhores preços, de forma sustentável. Desde que foi
+      fundada, em 1947, a H&M tornou-se uma das maiores empresas de moda do
+      mundo.
+    </p>
+  </footer>
 </main>
-
-<footer>
-  <app-footer></app-footer>
-</footer>

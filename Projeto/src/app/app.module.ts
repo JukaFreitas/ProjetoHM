@@ -5,15 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HttpClientModule } from '@angular/common/http';
-import { TiposprodutoComponent } from './tiposproduto/tiposproduto.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { UserautenticacaoComponent } from './users/userautenticacao/userautenticacao.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserregistoComponent } from './users/userregisto/userregisto.component';
 import { UserComponent } from './users/user/user.component';
-import { HeaderComponent } from './home/header/header.component';
-import { FooterComponent } from './home/footer/footer.component';
 import { HomepagComponent } from './home/homepag/homepag.component';
 import { CarroselComponent } from './home/carrosel/carrosel.component';
 import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
@@ -21,21 +18,20 @@ import { DestaquesComponent } from './home/destaques/destaques.component';
 import { ProdutoComponent } from './produtos/produto/produto.component';
 import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaprodutos.component';
 import { CardComponent } from './card/card.component';
-
+import { AdministradorComponent } from './users/administrador/administrador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TiposprodutoComponent,
     UserautenticacaoComponent,
     UserComponent, 
-    UserregistoComponent, HeaderComponent,
-     FooterComponent, 
+    UserregistoComponent,
      HomepagComponent, 
      CarroselComponent, 
      DestaquesComponent, 
      ProdutoComponent, 
-     PaginaprodutosComponent, CardComponent 
+     PaginaprodutosComponent, 
+     CardComponent 
      
      
   ],

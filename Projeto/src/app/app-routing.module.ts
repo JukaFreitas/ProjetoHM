@@ -5,6 +5,8 @@ import { UserregistoComponent } from './users/userregisto/userregisto.component'
 import { HomepagComponent } from './home/homepag/homepag.component';
 import { ProdutoComponent } from './produtos/produto/produto.component';
 import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaprodutos.component';
+import { AdministradorComponent } from './users/administrador/administrador.component';
+
 
 
 const routes: Routes = [
@@ -12,6 +14,7 @@ const routes: Routes = [
   {path:'home', component: HomepagComponent},
   {path: 'user', component: UserComponent},
   {path:'userregisto', component: UserregistoComponent},
+  {path:'administrador', component: AdministradorComponent},
   {path : 'produto/:id', component: ProdutoComponent},
   {path:'paginaProdutos/:genero/:tipoProduto', component: PaginaprodutosComponent}
 ];

@@ -2,7 +2,7 @@ export type Produto = {
     id?: number, 
     nome: string,
     marca:string, 
-    tipoProdId?: number, 
+    tipo_de_produto:string, 
     cor: string, 
     preco: number, 
     descricao: string, 
@@ -10,5 +10,4 @@ export type Produto = {
     foto_secundaria: string, 
     destaque: boolean, 
     categoria: string
-
 }

@@ -1,24 +1,18 @@
+
+ 
  .genero{
     text-align: center;
     padding: 20px;
 } 
 
 .paginaProdutosCaixa{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
-
-
-}
-
-.paginaProdutosDetalhe{
-    display: block;
+   padding-left: 200px;
 }
 
 
 .allcheckBox{
-    display: block;
+    display: block; 
+
 
 
 }

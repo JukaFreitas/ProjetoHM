@@ -5,5 +5,6 @@ export const subMenuHomem: string[] = [
     "Sweatshirts",
     "Polos",
     "Sapatos",
-    " Todos"
+    "T-Shirts",
+    "Todos"
 ]

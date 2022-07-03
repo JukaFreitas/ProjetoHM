@@ -1,7 +1,14 @@
-<img src="/assets/{{dados.foto_principal}}" class="cardImagem">
-<h2>{{ dados.marca }}</h2>
-<h1>{{ dados.nome }}</h1>
-<p>{{ dados.preco }}€</p>
-<p>
-    <fa-icon [icon]="faStar"></fa-icon>
-</p>
+<div class="card">
+        <p class="iconWishlist">
+                <a (click)="addWishlist()">
+                        <fa-icon [icon]="faStar"></fa-icon>
+                </a>
+        </p>
+        <div class="cardImagens">
+                <img src="/assets/{{dados.foto_principal}}" class="cardImagem">
+                <img src="/assets/{{dados.foto_secundaria}}" class="cardImagemSec">
+        </div>
+        <p class="marca">{{ dados.marca }}</p>
+        <p class="nome">{{ dados.nome }}</p>
+        <p class="preco">{{ dados.preco }}€</p>
+</div>
