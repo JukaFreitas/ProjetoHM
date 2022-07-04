@@ -8,12 +8,14 @@ import { ServprodutosService } from '../../services/servprodutos.service';
   styleUrls: ['./paginaprodutos.component.css']
 })
 export class PaginaprodutosComponent implements OnInit {
+
   genero!: string;
   tipoProduto!: string;
-  listaProdutosGenero: Produto[] = [];
 
   listaCores: string[] = [];
+  listatiposProduto: string[] = [];
 
+  listaProdutosGenero: Produto[] = [];
   listaFinal: Produto[] | null = [];
 
   initialRecord: number = 0;
@@ -29,6 +31,11 @@ export class PaginaprodutosComponent implements OnInit {
   ngOnInit(): void {
 
 
+
+    this.getTiposProdutos();
+    this.getProdutoCor();
+
+
     this.rotaActiva.paramMap.subscribe(params => {
       this.genero = params.get('genero')!;
     })
@@ -37,23 +44,20 @@ export class PaginaprodutosComponent implements OnInit {
       this.tipoProduto = params.get('tipoProduto')!;
     })
 
-   
 
-     if(this.tipoProduto!=="Todos"){
+
+    if (this.tipoProduto !== "Todos") {
       this.getProdutosTipo();
 
-     }else{
+
+    } else {
       this.getProdutosGenero();
-     }
-
-  
+    }
 
 
-    //  this.readPagePosts(this.initialRecord, this.numberRecords);
 
-    // this.getIdTipoProduto();
-    // this.getTiposProdutos();
-    this.getProtudoCor();
+
+
 
 
 
@@ -73,11 +77,10 @@ export class PaginaprodutosComponent implements OnInit {
     if (this.genero) {
       this.servProdutos.getProdutos()
         .subscribe((produtos: Produto[]) => {
-         this.listaProdutosGenero= produtos.filter(p => p.categoria === this.genero);
-         this.listaFinal=this.listaProdutosGenero
+          this.listaProdutosGenero = produtos.filter(p => p.categoria === this.genero);
+          this.listaFinal = this.listaProdutosGenero
         })
     }
-
   }
 
   getProdutosTipo() {
@@ -85,103 +88,98 @@ export class PaginaprodutosComponent implements OnInit {
     if (this.genero) {
       this.servProdutos.getProdutos()
         .subscribe((produtos: Produto[]) => {
-         this.listaProdutosGenero= produtos.filter(p => p.categoria === this.genero);
-         console.log(this.listaProdutosGenero)
-         console.log(this.tipoProduto)
-         this.listaFinal=this.listaProdutosGenero.filter(p=>p.tipo_de_produto===this.tipoProduto)
-         console.log(this.listaFinal)
+          this.listaProdutosGenero = produtos.filter(p => p.categoria === this.genero);
+          this.listaFinal = this.listaProdutosGenero.filter(p => p.tipo_de_produto === this.tipoProduto)
         })
     }
-        
+
+  }
+
+
+
+  getTiposProdutos() {
+    this.servProdutos.getProdutos()
+      .subscribe((produtos: Produto[]) => {
+        this.listatiposProduto = produtos.map(p => p.tipo_de_produto)
+        console.log(this.listatiposProduto);
+        this.listatiposProduto = this.listatiposProduto.filter(
+          (tipo_de_produto, t) => t === this.listatiposProduto.indexOf(tipo_de_produto));
+        console.log(this.listatiposProduto);
+
+
+      })
+  }
+
+
+  getProdutoCor() {
+    this.servProdutos.getProdutos()
+      .subscribe((produtos: Produto[]) => {
+        this.listaCores = produtos.map(p => p.cor)
+        this.listaCores = this.listaCores.filter(
+          (cor, c) => c === this.listaCores.indexOf(cor)
+        );
+
+
+      })
+  }
+
+  getProdutosFiltrados(tipoCor:any) {
+
+    this.servProdutos.getProdutos()
+      .subscribe((produtos: Produto[]) => {
+        this.listaFinal = produtos;
+      })
+
+
+    if (this.genero && this.genero.length > 0) {
+      this.listaFinal = (this.listaFinal?.filter(p => p.categoria === this.genero)!);
+    }
+
+    if (this.tipoProduto && this.tipoProduto.length > 0) {
+      this.listaFinal = (this.listaFinal?.filter(p => p.tipo_de_produto === this.tipoProduto)!);
+    }
+    this.listaFinal = (this.listaFinal?.filter(p => p.tipo_de_produto === tipoCor)!);
+    this.listaFinal = (this.listaFinal?.filter(p => p.cor === tipoCor)!)
+
+
+  }
+
+  getProdutoByTipo(tipo: any) {
+    this.listaFinal = this.listaProdutosGenero.filter(p => p.tipo_de_produto === tipo)
+    console.log(this.listaFinal, tipo)
+
+  }
+
+  getProdutoByCor(cor: any) {
+
     
+          this.listaFinal = this.listaProdutosGenero.filter(p => p.cor === cor)!
+      
+  }
+
+
+  readPagePosts(iniRec: number, numRec: number) {
+
+
+    this.servProdutos.getProdutosPage(iniRec, numRec).subscribe({
+      next: (response) => {
+
+        this.listaFinal = response.body;
+        console.log(this.listaFinal)
+        this.totalRegistos = Number(response.headers.get("X-Total-Count"));
+        // console.log(response.headers.get("X-Total-Count"));
+        console.log(this.listaFinal);
+      }
+    });
+
+
+  }
+  next6() {
+    this.initialRecord += 6;
+    this.readPagePosts(this.initialRecord, this.numberRecords);
   }
 
 
 
-
-
-    // getIdTipoProduto() {
-    //   this.rotaActiva.paramMap.subscribe(params => {
-    //     this.tipoProduto = params.get('tipoProduto')!;
-    //   });
-
-    //   if (this.tipoProduto.includes("Todos")) {
-    //     this.rotaActiva.paramMap.subscribe(params => {
-    //       this.genero = params.get('genero')!;
-    //       this.servProdutos.getProdutos()
-    //         .subscribe((produtos: Produto[]) => {
-    //           this.listaFinal = this.listaProdutosGenero =
-    //             produtos.filter(p => p.categoria === this.genero);
-
-
-
-    //         })
-    //     })
-
-    //   } else {
-    //     this.servTipoProduto.getTiposProduto()
-    //       .subscribe((tiposProduto: Tipoproduto[]) => {
-    //         this.listaTiposProduto =
-    //           tiposProduto.filter(tp => tp.tipo === this.tipoProduto)
-    //         const produtoTipo =
-    //           this.listaTiposProduto.find(tp => tp)
-    //         this.idTipoProduto = Number(produtoTipo?.id)
-    //         this.listaFinal =
-    //           this.listaProdutosGenero.
-    //             filter(pg => pg.tipoProdId === this.idTipoProduto)
-    //       });
-
-    //   }
-
-
-    // };
-
-
-    // getTiposProdutos() {
-    //   this.servTipoProduto.getTiposProduto().subscribe({
-    //     next: (produtosTipos: Tipoproduto[]) => {
-    //       this.tiposProduto = produtosTipos.filter(p => !p.tipo.includes!("Todos"));
-
-    //       console.log(this.tiposProduto)
-    //     }
-    //   });
-    // }
-
-    getProtudoCor() {
-      this.servProdutos.getProdutos()
-        .subscribe((produtos: Produto[]) => {
-          this.listaCores = produtos.map(p => p.cor)
-          this.listaCores = this.listaCores.filter(
-            (cor, c) => c === this.listaCores.indexOf(cor)
-          );
-
-          console.log(this.listaCores)
-
-        })
-    }
-
-    readPagePosts(iniRec: number, numRec: number) {
-
-
-      this.servProdutos.getProdutosPage(iniRec, numRec).subscribe({
-        next: (response) => {
-
-          this.listaFinal = response.body;
-          console.log(this.listaFinal)
-          this.totalRegistos = Number(response.headers.get("X-Total-Count"));
-          // console.log(response.headers.get("X-Total-Count"));
-          console.log(this.listaFinal);
-        }
-      });
-
-
-    }
-    next6() {
-      this.initialRecord += 6;
-      this.readPagePosts(this.initialRecord, this.numberRecords);
-    }
-
-
-
-  }
+}
 

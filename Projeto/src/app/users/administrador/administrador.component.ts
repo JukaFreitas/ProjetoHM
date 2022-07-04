@@ -10,8 +10,7 @@ import { ServprodutosService } from '../../services/servprodutos.service';
 })
 export class AdministradorComponent implements OnInit {
   listaProdutos: Produto[] = [];
-  formProdutos!: FormGroup;
-
+formProdutos!:FormGroup;
   listaTipo: any;
   constructor(private servProdutos: ServprodutosService) { }
 

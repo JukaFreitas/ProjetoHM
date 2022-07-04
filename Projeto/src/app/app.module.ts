@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { UserautenticacaoComponent } from './users/userautenticacao/userautenticacao.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserregistoComponent } from './users/userregisto/userregisto.component';
 import { UserComponent } from './users/user/user.component';
 import { HomepagComponent } from './home/homepag/homepag.component';
@@ -19,7 +19,6 @@ import { ProdutoComponent } from './produtos/produto/produto.component';
 import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaprodutos.component';
 import { CardComponent } from './card/card.component';
 import { AdministradorComponent } from './users/administrador/administrador.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +30,8 @@ import { AdministradorComponent } from './users/administrador/administrador.comp
      DestaquesComponent, 
      ProdutoComponent, 
      PaginaprodutosComponent, 
-     CardComponent 
+     CardComponent , 
+     AdministradorComponent
      
      
   ],
@@ -44,6 +44,7 @@ import { AdministradorComponent } from './users/administrador/administrador.comp
     ModalModule.forRoot(),
     CarouselModule.forRoot(),
     FontAwesomeModule, 
+    FormsModule,
     ReactiveFormsModule, 
     CarouselModule
     

@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
   }
 
   addWishlist(){
-   this.faStar = faStarSolid;
+   this.faStar;
    }
 
 

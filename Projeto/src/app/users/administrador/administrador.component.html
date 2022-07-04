@@ -1,5 +1,5 @@
-<!-- <h3>Gestão de Produtos</h3>
-<form [formGroup]="formProdutos" (ngSubmit)="inserirProduto()">
+<h3>Gestão de Produtos</h3>
+<form [formGroup]="formProdutos"(ngSubmit)="inserirProduto()">
     <p><label for="produto">Produto:</label> <input type="text" id="produto" formControlName="produto"></p>
     <small *ngIf="formProdutos.get('produto')!.touched && formProdutos.get('produto')!.invalid">
         O nome do 'Produto' deverá ter, no mínimo 3 caracteres(máx. 40 caracteres).
@@ -18,5 +18,5 @@
     <p><label for="descricao">Descrição:</label> <input type="text" id="descricao" formControlName="descricao"></p>
 
   <p class=""><input type="submit" value="Registar Produto" [disabled]="formProdutos.invalid"> </p>
-</form> -->
+</form> 
 

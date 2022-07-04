@@ -1,4 +1,8 @@
+.pageContainer{
+    display: flex;
+    flex-direction: column;
 
+}
  
  .genero{
     text-align: center;
@@ -6,25 +10,26 @@
 } 
 
 .paginaProdutosCaixa{
-   padding-left: 200px;
+   padding-left: 300px;
 }
 
 
 .allcheckBox{
+    
     display: block; 
+    width: 10%;
+
+
 
 
 
 }
 .checkBox{
     border: 1px solid black;
-padding: 0;
-    width: 10%;
 
 }
 
  .checkBoxTitulo{
-    margin:0; 
 background-color: orangered;
 text-align: center;
 
