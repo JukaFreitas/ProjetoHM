@@ -78,7 +78,7 @@
         type="button"
         class="button"
       >
-        <fa-icon [icon]="faRegisto"></fa-icon>
+        <fa-icon *ngIf="show" [icon]="faRegisto"></fa-icon>
       </button>
       <button>
         <fa-icon *ngIf="mostraME" [icon]="faPerfil"></fa-icon>

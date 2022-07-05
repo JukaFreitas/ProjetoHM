@@ -10,7 +10,7 @@
       "descricao": "We heard somewhere that we should enjoy the simple things in life. That's why we immediately knew this Song For The Mute white T-shirt would bring more fun to our days. Even if it means going back to the office.",
       "foto_principal": "graphic_print_tshirt_1.jpg",
       "foto_secundaria": "graphic_print_tshirt_2.jpg",
-      "destaque": true, 
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -18,12 +18,12 @@
       "nome": "Comme Des Garçons",
       "marca": "Song For The Mute",
       "tipo_de_produto": "Camisas",
-      "cor": "Multicor", 
+      "cor": "Multicor",
       "preco": 442,
       "descricao": "Multi-colored cotton logo patch crewneck T-shirt from SONG FOR THE MUTE featuring logo patch to the front, short sleeves and straight hem.",
       "foto_principal": "contrast_panel_short_sleeve_shirt_1.jpg",
       "foto_secundaria": "contrast_panel_short_sleeve_shirt_2.jpg",
-      "destaque": true, 
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -36,7 +36,7 @@
       "descricao": "For the modern gentleman. Crafted from a linen blend, this Moulin suit jacket from Jacquemus showcases the designer's ability to deliver sartorial designs with a contemporary twist. Suit up.",
       "foto_principal": "moulin_suit_jacket_1.jpg",
       "foto_secundaria": "moulin_suit_jacket_2.jpg",
-      "destaque": true, 
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -48,8 +48,8 @@
       "preco": 315,
       "descricao": "Black, paisley print, logo print at the chest, logo print to the rear, striped lining, classic hood, two-way zip fastening, long sleeves, toggle fastening, buttoned cuffs.",
       "foto_principal": "intarsia_paisley_logo_windbreaker_1.jpg",
-      "foto_secundaria": "intarsia_paisley_logo_windbreaker_2.jpg", 
-      "destaque": true, 
+      "foto_secundaria": "intarsia_paisley_logo_windbreaker_2.jpg",
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -61,8 +61,8 @@
       "preco": 623,
       "descricao": "Light grey, cotton blend, drawstring hood, logo print at the chest, long sleeves, front pouch pocket, straight hem",
       "foto_principal": "logo_print_hoodie_1.jpg",
-      "foto_secundaria": "logo_print_hoodie_2.jpg", 
-      "destaque": true, 
+      "foto_secundaria": "logo_print_hoodie_2.jpg",
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -74,8 +74,8 @@
       "preco": 144,
       "descricao": "Blue cotton cropped straight leg chinos from Department 5 featuring a waistband with belt loops, a front fastening, side pockets, back pockets and turn up hems.",
       "foto_principal": "cropped_straight_leg_chinos_1.jpg",
-      "foto_secundaria": "cropped_straight_leg_chinos_2.jpg", 
-      "destaque": true, 
+      "foto_secundaria": "cropped_straight_leg_chinos_2.jpg",
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -87,8 +87,8 @@
       "preco": 131,
       "descricao": "Blue cotton and linen blend slim fit chinos from Pt01 featuring a pleated waist, a button and zip fly, a waistband with belt loops, side pockets and a regular length.",
       "foto_principal": "slim_fit_chinos_1.jpg",
-      "foto_secundaria": "slim_fit_chinos_2.jpg", 
-      "destaque": true, 
+      "foto_secundaria": "slim_fit_chinos_2.jpg",
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -100,8 +100,8 @@
       "preco": 315,
       "descricao": "Blue/black, colour-block panelled design, embroidered logo to the rear, logo patch at the sleeve, high neck, front zip fastening, long sleeves, two side slit pockets",
       "foto_principal": "lhotse_padded_jacket_1.jpg",
-      "foto_secundaria": "lhotse_padded_jacket_2.jpg", 
-      "destaque": true, 
+      "foto_secundaria": "lhotse_padded_jacket_2.jpg",
+      "destaque": true,
       "categoria": "Homem"
     },
     {
@@ -113,8 +113,8 @@
       "preco": 575,
       "descricao": "Imperial-blue, cotton and polyamide-blend, classic hood, long sleeves, oversize frame, front zip fastening",
       "foto_principal": "oversized_hooded_jacket_1.jpg",
-      "foto_secundaria": "oversized_hooded_jacket_2.jpg", 
-      "destaque": false, 
+      "foto_secundaria": "oversized_hooded_jacket_2.jpg",
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -127,7 +127,7 @@
       "descricao": "Two colours are better than one and this padded coat from Vetements has both black and blue adorning an outwear choice that keeps you warm on the chilliest of days. It's plain as black and white to see you'll love this look.",
       "foto_principal": "two_tone_padded_coat_1.jpg",
       "foto_secundaria": "two_tone_padded_coat_2.jpg",
-      "destaque": false, 
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -139,8 +139,8 @@
       "preco": 825,
       "descricao": "Monarch orange feather down oversized padded coat from Canada Goose featuring a hood, long sleeves, a snap button over zip concealed front fastening, a logo patch at the sleeve and a metallic logo print at the sleeve.",
       "foto_principal": "oversized_padded_coat_1.jpg",
-      "foto_secundaria": "oversized_padded_coat_2.jpg", 
-      "destaque": false, 
+      "foto_secundaria": "oversized_padded_coat_2.jpg",
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -152,8 +152,8 @@
       "preco": 162,
       "descricao": "Founded in 1986, Helmut Lang has been accredited with redefining modern luxury, offering styles that endorse the progressive spirit of the house’s founder. This raw indigo cotton long straight-cut jeans from Helmut Lang features a waistband with belt loops, a button and zip fly, two front pockets, a rolled hem and contrasting panels.",
       "foto_principal": "long_straight_cut_jeans_1.jpg",
-      "foto_secundaria": "long_straight_cut_jeans_2.jpg", 
-      "destaque": false, 
+      "foto_secundaria": "long_straight_cut_jeans_2.jpg",
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -165,8 +165,8 @@
       "preco": 220,
       "descricao": "Azure-blue, cotton-blend, slim cut, front button fastening, two diagonal pockets to the sides, two rear patch pockets",
       "foto_principal": "slim_cut_trousers_1.jpg",
-      "foto_secundaria": "slim_cut_trousers_2.jpg", 
-      "destaque": false, 
+      "foto_secundaria": "slim_cut_trousers_2.jpg",
+      "destaque": false,
       "categoria": "Homem"
     },
     {
@@ -178,10 +178,10 @@
       "preco": 155,
       "descricao": "Khaki green, stretch cotton, belt loops, concealed front fastening, two side inset pockets, two rear flap pockets, logo patch to the rear, slim fit",
       "foto_principal": "slim_fit_moleskin_trousers_1.jpg",
-      "foto_secundaria": "slim_fit_moleskin_trousers_2.jpg", 
-      "destaque": false, 
+      "foto_secundaria": "slim_fit_moleskin_trousers_2.jpg",
+      "destaque": false,
       "categoria": "Homem"
-    }, 
+    },
     {
       "id": 15,
       "nome": "Slim-cut trousers",
@@ -191,86 +191,46 @@
       "preco": 220,
       "descricao": "Azure-blue, cotton-blend, slim cut, front button fastening, two diagonal pockets to the sides, two rear patch pockets",
       "foto_principal": "slim_cut_trousers_1.jpg",
-      "foto_secundaria": "slim_cut_trousers_2.jpg", 
-      "destaque": false, 
+      "foto_secundaria": "slim_cut_trousers_2.jpg",
+      "destaque": false,
       "categoria": "Mulher"
     }
-    ],
+  ],
   "users": [
     {
       "id": 1,
+      "nome": "Administrador",
+      "email": "admin@gmail.com",
+      "senha": "Admin1234.",
+      "morada": "Rua Unidade Vimaranense",
+      "codigo_postal": "4805-285",
+      "pais": "Portugal",
+      "tipo": "Administrador",
+      "wishlists": []
+    },
+    {
+      "id": 2,
       "nome": "Joana",
       "email": "joana@gmail.com",
       "senha": "1234teste",
       "morada": "Rua Unidade Vimaranense",
       "codigo_postal": "4805-285",
       "pais": "Portugal",
+      "tipo": "Cliente",
       "wishlists": {
         "produtoId": 1
       }
     },
     {
-      "nome": "eduardo@gmail.com",
-      "email": null,
-      "senha": "hZxmk6FN3p7AZx8",
-      "morada": "1234",
-      "codigo_postal": "ewq",
-      "pais": null,
-      "id": 2
-    },
-    {
-      "nome": "eduardo",
-      "email": "eduardo@gmail.com",
-      "senha": "hZxmk6FN3p7AZx8",
-      "morada": "dsadas",
-      "codigo_postal": "",
-      "pais": "",
-      "id": 3
-    },
-    {
-      "nome": "nd",
-      "email": "",
-      "senha": "",
-      "morada": "",
-      "codigo_postal": "",
-      "pais": "",
-      "id": 4
-    },
-    {
-      "nome": "sa",
-      "email": "",
-      "senha": "hZxmk6FN3p7AZx8",
-      "morada": "",
-      "codigo_postal": "",
-      "pais": "",
-      "id": 5
-    },
-    {
       "nome": "joana",
       "email": "joanam@gmail.com",
-      "senha": "108Fermentoes.",
-      "morada": "dmska",
-      "codigo_postal": "das",
-      "pais": "dsa",
-      "id": 6
-    },
-    {
-      "nome": "joana",
-      "email": "joana@gmail.com",
-      "senha": "108Fermentoes.",
-      "morada": null,
-      "codigo_postal": null,
-      "pais": null,
-      "id": 7
-    },
-    {
-      "nome": "edu",
-      "email": "edu@gmail.com",
-      "senha": "108FErmentoes",
+      "senha": "108fermentoes",
       "morada": "",
       "codigo_postal": "",
       "pais": "",
-      "id": 8
+      "wishlist": [],
+      "tipo": "Cliente",
+      "id": 3
     }
   ]
 }

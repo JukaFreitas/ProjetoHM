@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Produto } from '../../models/produto';
 import { ServprodutosService } from '../../services/servprodutos.service';
@@ -12,6 +12,12 @@ export class AdministradorComponent implements OnInit {
   listaProdutos: Produto[] = [];
 formProdutos!:FormGroup;
   listaTipo: any;
+
+  @Input() pesquisaCorrente! : string;
+  
+  @Output() valorPesquisa : EventEmitter<string> = new EventEmitter();
+  @Output() limpaPesquisa : EventEmitter<string> = new EventEmitter();
+
   constructor(private servProdutos: ServprodutosService) { }
 
   ngOnInit(): void {
@@ -26,6 +32,8 @@ formProdutos!:FormGroup;
 
     });
     this.allProdutos();
+
+    
   }
 
 
@@ -64,7 +72,29 @@ formProdutos!:FormGroup;
     return this.formProdutos.controls["produto"]!;
   }
 
+  pesquisaProduto(pesquisa : string){
+    this.valorPesquisa.emit(pesquisa);
+
+
+  }
+
+  clearPesquisa(){
+    this.limpaPesquisa.emit();
+  
+   }
+
+   eliminaProduto(id:number, evento:any){
+
+   }
+
+   alteraProduto(id:number, evento:any){
+
+   }
+  
+
 }
+
+
 
 
 //   leLivros() {

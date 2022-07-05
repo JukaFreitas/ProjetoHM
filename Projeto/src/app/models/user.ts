@@ -7,4 +7,5 @@ export type User = {
     codigo_postal: string, 
     pais: string, 
     wishlist: Array<number>
+    tipo: string; 
 }

@@ -1,11 +1,13 @@
 <div class="modal-header">
     <h4 class="modal-title pull-left">Controlo de acessos</h4>
+    
     <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
         <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
 </div>
 <div class="formCaixa">
     <form [formGroup]="formLogin" (ngSubmit)="userLogin()">
+        <small class="mensagemErro">{{mensagemErro}}</small>
         <p>Email:<input type="text" [formControlName]="'email'"></p>
         <small *ngIf="formLogin.get('email')!.touched && formLogin.get('email')!.invalid">
             <span *ngIf="email.errors?.['required']">O campo 'email' é de preenchimento obrigatório!</span>

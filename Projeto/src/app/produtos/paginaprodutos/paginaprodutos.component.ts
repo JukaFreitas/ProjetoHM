@@ -17,12 +17,16 @@ export class PaginaprodutosComponent implements OnInit {
 
   listaProdutosGenero: Produto[] = [];
   listaFinal: Produto[] | null = [];
+  listaResponse: Produto[] | null = [];
+  listaGeneroCor : Produto[] | null = [];
 
   initialRecord: number = 0;
   numberRecords: number = 6;
   totalRegistos!: number;
 
   mostraIcon: boolean = false;
+
+  
 
 
 
@@ -54,6 +58,7 @@ export class PaginaprodutosComponent implements OnInit {
       this.getProdutosGenero();
     }
 
+    this.readPageProdutos(this.initialRecord,this.numberRecords);
 
 
 
@@ -123,52 +128,32 @@ export class PaginaprodutosComponent implements OnInit {
       })
   }
 
-  getProdutosFiltrados(tipoCor:any) {
-
-    this.servProdutos.getProdutos()
-      .subscribe((produtos: Produto[]) => {
-        this.listaFinal = produtos;
-      })
-
-
-    if (this.genero && this.genero.length > 0) {
-      this.listaFinal = (this.listaFinal?.filter(p => p.categoria === this.genero)!);
-    }
-
-    if (this.tipoProduto && this.tipoProduto.length > 0) {
-      this.listaFinal = (this.listaFinal?.filter(p => p.tipo_de_produto === this.tipoProduto)!);
-    }
-    this.listaFinal = (this.listaFinal?.filter(p => p.tipo_de_produto === tipoCor)!);
-    this.listaFinal = (this.listaFinal?.filter(p => p.cor === tipoCor)!)
-
-
-  }
-
   getProdutoByTipo(tipo: any) {
-    this.listaFinal = this.listaProdutosGenero.filter(p => p.tipo_de_produto === tipo)
+   this.listaGeneroCor=   this.listaProdutosGenero.filter(p => p.tipo_de_produto === tipo)
+   this.listaFinal= this.listaGeneroCor;
     console.log(this.listaFinal, tipo)
 
   }
 
   getProdutoByCor(cor: any) {
 
-    
-          this.listaFinal = this.listaProdutosGenero.filter(p => p.cor === cor)!
+          this.listaFinal = this.listaGeneroCor?.filter(p => p.cor === cor)!
       
   }
 
 
-  readPagePosts(iniRec: number, numRec: number) {
+  readPageProdutos(iniRec: number, numRec: number) {
 
 
     this.servProdutos.getProdutosPage(iniRec, numRec).subscribe({
       next: (response) => {
+         this.listaResponse = this.listaFinal;
+    
 
-        this.listaFinal = response.body;
+         this.listaResponse = response.body;
         console.log(this.listaFinal)
         this.totalRegistos = Number(response.headers.get("X-Total-Count"));
         // console.log(response.headers.get("X-Total-Count"));
-        console.log(this.listaFinal);
       }
     });
 
@@ -176,7 +161,7 @@ export class PaginaprodutosComponent implements OnInit {
   }
   next6() {
     this.initialRecord += 6;
-    this.readPagePosts(this.initialRecord, this.numberRecords);
+    this.readPageProdutos(this.initialRecord, this.numberRecords);
   }
 
 

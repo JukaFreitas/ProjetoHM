@@ -29,6 +29,9 @@ export class UserregistoComponent implements OnInit {
 
   registoUser(){
     let user : User = this.formRegisto.value;
+    user.wishlist=[];
+    user.tipo ="Cliente"; 
+
     this.servUsers.postUser(user).subscribe(
       (user : User) => {
         console.log(user);
