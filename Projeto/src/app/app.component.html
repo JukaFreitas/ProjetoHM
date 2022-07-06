@@ -9,10 +9,7 @@
               <button class="btDrop">Homem</button>
               <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuHomem of opcoesMenuHomem">
-                  <a
-                    [routerLink]="['/paginaProdutos', homem, opcaoMenuHomem]"
-                    >{{ opcaoMenuHomem }}</a
-                  >
+                  <a [routerLink]="['/paginaProdutos', homem, opcaoMenuHomem]">{{ opcaoMenuHomem }}</a>
                 </li>
               </div>
             </div>
@@ -21,10 +18,7 @@
               <button class="btDrop">Mulher</button>
               <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuMulher of opcoesMenuMulher">
-                  <a
-                    [routerLink]="['/paginaProdutos', mulher, opcaoMenuMulher]"
-                    >{{ opcaoMenuMulher }}</a
-                  >
+                  <a [routerLink]="['/paginaProdutos', mulher, opcaoMenuMulher]">{{ opcaoMenuMulher }}</a>
                 </li>
               </div>
             </div>
@@ -33,14 +27,11 @@
               <button class="btDrop">Criança</button>
               <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuCrianca of opcoesMenuCrianca">
-                  <a
-                    [routerLink]="[
+                  <a [routerLink]="[
                       '/paginaProdutos',
                       crianca,
                       opcaoMenuCrianca
-                    ]"
-                    >{{ opcaoMenuCrianca }}</a
-                  >
+                    ]">{{ opcaoMenuCrianca }}</a>
                 </li>
               </div>
             </div>
@@ -49,14 +40,11 @@
               <button class="btDrop">Acessórios</button>
               <div class="dropdownContent">
                 <li *ngFor="let opcaoMenuAcessorio of opcoesMenuAcessorios">
-                  <a
-                    [routerLink]="[
+                  <a [routerLink]="[
                       '/paginaProdutos',
                       acessorios,
                       opcaoMenuAcessorio
-                    ]"
-                    >{{ opcaoMenuAcessorio }}</a
-                  >
+                    ]">{{ opcaoMenuAcessorio }}</a>
                 </li>
               </div>
             </div>
@@ -65,23 +53,24 @@
       </nav>
     </div>
 
-    <div class="iconsHeader">
-      <button *ngIf="mostraME">
-        <fa-icon [icon]="faWishlist"></fa-icon>
+    <div class="iconsHeader" >
+      <small  *ngIf="userComLogin">Bemvindo {{userNome}}</small>
+      <button>
+        
+
+        <fa-icon class="faWishlist"  *ngIf="userComLogin"[icon]="faWishlist"></fa-icon>
       </button>
       <button type="button" class="button" (click)="openModalLogin()">
-        <fa-icon [icon]="faLog"></fa-icon>
+        <fa-icon class="faLogin"  *ngIf="!userComLogin"[icon]="faLogin"></fa-icon>
       </button>
-      <button
-        routerLink="/userregisto"
-        routerLinkActive="activa"
-        type="button"
-        class="button"
-      >
-        <fa-icon *ngIf="show" [icon]="faRegisto"></fa-icon>
+      <button type="button" class="button" (click)="logOut()">
+        <fa-icon class="faLogout" *ngIf="userComLogin" [icon]="faLogout"></fa-icon>
       </button>
-      <button>
-        <fa-icon *ngIf="mostraME" [icon]="faPerfil"></fa-icon>
+      <button routerLink="/userregisto" routerLinkActive="activa" type="button" class="button">
+        <fa-icon class="faRegisto" *ngIf="!userComLogin" [icon]="faRegisto"></fa-icon>
+      </button>
+      <button routerLink="/user" routerLinkActive="activa" type="button" class="button">
+        <fa-icon class="faPerfil" *ngIf="userComLogin"[icon]="faPerfil"></fa-icon>
       </button>
     </div>
   </div>

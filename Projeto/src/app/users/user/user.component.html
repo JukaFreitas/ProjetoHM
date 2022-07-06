@@ -1,17 +1,26 @@
-<!-- 
-    <div class="iconsHeader">
-        <button *ngIf="mostraME" >
-            <fa-icon [icon]="faWishlist"></fa-icon>
-        </button>
-        <button type="button" 
-        class="button" (click)="openModalLogin()">
-            <fa-icon [icon]="faLog"></fa-icon>
-        </button>
-        <button routerLink="/userregisto" routerLinkActive="activa" type="button" 
-        class="button">
-            <fa-icon [icon]="faRegisto"></fa-icon>
-        </button>
-        <button>
-            <fa-icon *ngIf="mostraME"  [icon]="faPerfil"></fa-icon>
-        </button>
-    </div> -->
+<p *ngIf="!dadosUser">Não existem dados do utilizador.</p>
+<table id="tabelaDados" *ngIf="dadosUser">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Morada</th>
+            <th>Código Postal</th>
+            <th>País</th>
+            <th>Editar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ user.nome }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.senha }}</td>
+            <td>{{ user.morada}}</td>
+            <td>{{ user.codigo_postal}}</td>
+            <td>{{ user.pais }}</td>
+            <td><a href="javascript:void(0);" class="tabela_user_icone"(click)="alterarDados()">&#9998;</a></td>
+        </tr>
+    </tbody>
+</table>

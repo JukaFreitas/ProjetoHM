@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Controlo de acessos</h4>
+    
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="formCaixa">
+    <form [formGroup]="formEditar"  (ngSubmit)="atualizarUser()">
+        <!-- <small class="mensagemErro">{{mensagemErro}}</small> -->
+        <p>Email:<input type="text" [formControlName]="'email'"></p>
+        <small *ngIf="formEditar.get('email')!.touched && formEditar.get('email')!.invalid">
+            <span *ngIf="formEditar.errors?.['required']">O campo 'email' é de preenchimento obrigatório!</span>
+            <span *ngIf="formEditar.hasError('pattern')">O 'email' inserido não tem formato correcto</span>
+        </small>
+        <p>Senha:<input type="password" [formControlName]="'senha'"></p>
+        <small *ngIf="formEditar.get('senha')!.touched && formEditar.get('senha')!.invalid">
+            <span *ngIf="formEditar.errors?.['required']">O campo 'senha' é de preenchimento obrigatório!</span>
+        </small>      
+
+            <p class="btEntrar" ><input  type="submit" value="Submter"></p>
+          
+    </form>
+</div>

@@ -1,14 +1,26 @@
-/* .iconsHeader{
-   display: flex;
+table {
+    border-collapse: collapse;
 }
 
-
-.iconsHeader button {
-    border: none;
-    background-color: white ;
-
-   
-
+th, td {
+    border: 1px solid #bdbfcb;
+    padding: 10px 15px;
 }
 
-    */
+th {
+    font-weight: bold;
+}
+
+thead tr th {
+    height: 30px;
+    line-height: 30px;
+}
+
+tbody {
+    border-top: 2px solid black;
+}
+
+tbody td:last-child,
+thead th:last-child {
+    border-right: none !important;
+}

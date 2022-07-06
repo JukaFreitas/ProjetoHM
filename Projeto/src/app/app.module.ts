@@ -20,6 +20,7 @@ import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaproduto
 import { CardComponent } from './card/card.component';
 import { AdministradorComponent } from './users/administrador/administrador.component';
 import { ServstoreService } from './services/servstore.service';
+import { UsereditarComponent } from './users/usereditar/usereditar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { ServstoreService } from './services/servstore.service';
      ProdutoComponent, 
      PaginaprodutosComponent, 
      CardComponent , 
-     AdministradorComponent
+     AdministradorComponent, UsereditarComponent,
      
      
   ],
@@ -47,9 +48,11 @@ import { ServstoreService } from './services/servstore.service';
     FontAwesomeModule, 
     FormsModule,
     ReactiveFormsModule, 
-    CarouselModule, 
+    CarouselModule
+    
+    
   ],
-  providers: [ServstoreService, { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true }}],
+  providers: [ ServstoreService, { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

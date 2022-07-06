@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faFacebook, faInstagram, faPinterest, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faArrowAltCircleRight, faClipboardList, faUserEdit, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight, faClipboardList, faUserEdit, faUserPlus, faArrowAltCircleLeft, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { subMenuAcessorios } from 'src/app/models/menus/subMenuAcessorios';
 import { subMenuCrianca } from 'src/app/models/menus/subMenuCrianca';
@@ -35,26 +35,33 @@ export class AppComponent {
   faPinterest = faPinterest;
 
   faWishlist = faClipboardList;
-  faLog = faArrowAltCircleRight;
+  faLogin = faArrowAltCircleRight;
   faRegisto = faUserPlus;
   faPerfil = faUserEdit;
+  faLogout= faArrowCircleLeft;
+
 
   modalRef?: BsModalRef;
-  mostraME?: boolean;
+  userComLogin?: boolean;
   show: boolean = true;
-  constructor(private router: Router, private rotaActiva: ActivatedRoute,private servStore: ServstoreService, private modalService: BsModalService) { }
+  mensagemUser!: string;
+userNome!:any;
+
+  constructor(private router: Router, private servStore: ServstoreService, private modalService: BsModalService) {
+    this.servStore.userComlogin.subscribe((value)=>
+    { 
+      this.userComLogin= value; 
+      // this.userNome = this.servStore.getCurrentUser().nome; 
+    }); 
+
+    this.servStore.userName.subscribe(value=> this.userNome = value)
+
+   }
 
   ngOnInit() {
-    
-    const user = this.servStore.getCurrentUser();
-    console.log(user);
-    if (user) {
-      this.mostraME = true;
-      this.show = false;
-      console.log(user); 
-
-
-    }
+    const  user = this.servStore.getCurrentUser();
+    console.log(user); 
+  
 
   }
   
@@ -64,6 +71,17 @@ export class AppComponent {
 
   }
 
+
+  estadoLogin(){
+  const  user = this.servStore.getCurrentUser();
+  console.log(user)
+
+      
+  }
+
+  logOut(){
+    this.servStore.removerCurrentUser(); 
+  }
 
 
 }

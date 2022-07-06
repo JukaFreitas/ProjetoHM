@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ServusersService } from 'src/app/services/servusers.service';
 import { User } from '../../models/user';
+import { ServstoreService } from '../../services/servstore.service';
 
 @Component({
   selector: 'app-userregisto',
@@ -14,7 +15,7 @@ export class UserregistoComponent implements OnInit {
 
   formRegisto! : FormGroup;
  
-  constructor(private servUsers: ServusersService,private rotaActiva: ActivatedRoute,  private localizacao: Location) { }
+  constructor(private servStore: ServstoreService, private servUsers: ServusersService,private rotaActiva: ActivatedRoute,  private localizacao: Location) { }
 
   ngOnInit(): void {
     this.formRegisto = new FormGroup({
@@ -36,8 +37,10 @@ export class UserregistoComponent implements OnInit {
       (user : User) => {
         console.log(user);
         this.formRegisto.reset();
+        this.servStore.setCurrentUser(user); 
    
       } 
+
     ) 
 
 

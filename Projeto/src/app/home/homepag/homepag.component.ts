@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServstoreService } from '../../services/servstore.service';
 
 
 
@@ -12,9 +13,10 @@ export class HomepagComponent implements OnInit {
 
   
 
-  constructor() { }
+  constructor(private servStore: ServstoreService) { }
 
   ngOnInit(): void {
+
   }
 
   

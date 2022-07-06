@@ -1,7 +1,9 @@
 import { Component, OnInit, enableProdMode } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 import { Produto } from '../../models/produto';
 import { ServprodutosService } from '../../services/servprodutos.service';
+import { ServstoreService } from '../../services/servstore.service';
 @Component({
   selector: 'app-paginaprodutos',
   templateUrl: './paginaprodutos.component.html',
@@ -25,15 +27,17 @@ export class PaginaprodutosComponent implements OnInit {
   totalRegistos!: number;
 
   mostraIcon: boolean = false;
+   user!: User; 
 
   
 
 
 
-  constructor(private router: Router, private rotaActiva: ActivatedRoute, private servProdutos: ServprodutosService) { }
+  constructor(private servStore: ServstoreService,  private router: Router, private rotaActiva: ActivatedRoute, private servProdutos: ServprodutosService) { }
 
   ngOnInit(): void {
-
+this.user= this.servStore.getCurrentUser(); 
+console.log(this.user)
 
 
     this.getTiposProdutos();

@@ -9,6 +9,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user';
 import { ServusersService } from 'src/app/services/servusers.service';
 import { UserautenticacaoComponent } from '../userautenticacao/userautenticacao.component';
+import { ServstoreService } from '../../services/servstore.service';
+import { UsereditarComponent } from '../usereditar/usereditar.component';
 
 @Component({
   selector: 'app-user',
@@ -17,20 +19,25 @@ import { UserautenticacaoComponent } from '../userautenticacao/userautenticacao.
 })
 export class UserComponent implements OnInit {
   listaUsers: User[] = [];
+  dadosUser!:User; 
+  user!: User; 
+  modalRef?: BsModalRef;
 
  
-  constructor(private router: Router, private servUsers: ServusersService, 
-    private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService,private servStore: ServstoreService) { }
 
   ngOnInit(): void {
+
+    this.user= this.servStore.getCurrentUser(); 
+    this.dadosUser = this.user; 
   }
 
-  leUsers() {
-    this.servUsers.getUsers().subscribe((users: User[]) => {
-      console.log(users)
-    }
-    );
+  alterarDados(){
+    this.modalRef = this.modalService.show(UsereditarComponent)
 
 
   }
+
+
+
 }

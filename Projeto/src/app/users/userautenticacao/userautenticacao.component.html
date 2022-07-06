@@ -6,7 +6,7 @@
     </button>
 </div>
 <div class="formCaixa">
-    <form [formGroup]="formLogin" (ngSubmit)="userLogin()">
+    <form [formGroup]="formLogin"  (ngSubmit)="userLogin()">
         <small class="mensagemErro">{{mensagemErro}}</small>
         <p>Email:<input type="text" [formControlName]="'email'"></p>
         <small *ngIf="formLogin.get('email')!.touched && formLogin.get('email')!.invalid">
@@ -16,8 +16,9 @@
         <p>Senha:<input type="password" [formControlName]="'senha'"></p>
         <small *ngIf="formLogin.get('senha')!.touched && formLogin.get('senha')!.invalid">
             <span *ngIf="senha.errors?.['required']">O campo 'senha' é de preenchimento obrigatório!</span>
-        </small>
-            <p class="btEntrar"><input type="submit" value="Entrar"></p>
+        </small>      
+
+            <p class="btEntrar" ><input  type="submit" value="Entrar"></p>
           
     </form>
 </div>

@@ -8,14 +8,15 @@ import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaproduto
 import { AdministradorComponent } from './users/administrador/administrador.component';
 import { ServstoreService } from './services/servstore.service';
 import { UserautenticacaoComponent } from './users/userautenticacao/userautenticacao.component';
+import { AppComponent } from './app.component';
 
 
 
 const routes: Routes = [
-  {path:'', component: HomepagComponent}, 
-  {path:'home', component: HomepagComponent},
+  {path:'home', component:HomepagComponent }, 
+  {path:'', component: HomepagComponent},
   {path: 'user', component: UserComponent},
-  {path:'', component: UserautenticacaoComponent},
+  {path:'userautenticacao', component: UserautenticacaoComponent},
   {path:'userregisto', component: UserregistoComponent},
   {path:'administrador', component: AdministradorComponent},
   {path : 'produto/:id', component: ProdutoComponent},

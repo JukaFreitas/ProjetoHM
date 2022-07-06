@@ -10,30 +10,30 @@ import { ServstoreService } from '../../services/servstore.service';
 })
 export class ProdutoComponent implements OnInit {
 
-id! : number;
-produto! : Produto;
+  id!: number;
+  produto!: Produto;
   constructor(private servStore: ServstoreService, private rotaActiva: ActivatedRoute, private servProdutos: ServprodutosService) { }
 
   ngOnInit(): void {
-    
-     this.rotaActiva.paramMap.subscribe(params => { 
-       this.id = Number (params.get('id')); 
-     })
-     
-     if (!isNaN(this.id)) {
-   this.servProdutos.getProduto(this.id).subscribe((produto : Produto)=>{
-   this.produto = produto;
-   console.log(this.servStore.getCurrentUser());
 
-   
-   
-   
-   })
+    this.rotaActiva.paramMap.subscribe(params => {
+      this.id = Number(params.get('id'));
+    })
 
-   
-    
-     }
-     
+    if (!isNaN(this.id)) {
+      this.servProdutos.getProduto(this.id).subscribe((produto: Produto) => {
+        this.produto = produto;
+        this.servStore.getCurrentUser();
+
+
+
+
+      })
+
+
+
+    }
+
   }
 
 

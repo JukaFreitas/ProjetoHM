@@ -231,6 +231,17 @@
       "wishlist": [],
       "tipo": "Cliente",
       "id": 3
+    },
+    {
+      "nome": "Maria",
+      "email": "maria@gmail.com",
+      "senha": "Mariajoana.1",
+      "morada": "",
+      "codigo_postal": "",
+      "pais": "",
+      "wishlist": [],
+      "tipo": "Cliente",
+      "id": 4
     }
   ]
 }
