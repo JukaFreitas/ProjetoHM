@@ -1,13 +1,14 @@
 <div class="modal-header">
-    <h4 class="modal-title pull-left">Controlo de acessos</h4>
-    
+    <h4 class="modal-title pull-left">Atualizar Dados Pessoais</h4>
+
     <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
         <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
 </div>
 <div class="formCaixa">
-    <form [formGroup]="formEditar"  (ngSubmit)="atualizarUser()">
+    <form [formGroup]="formEditar" (ngSubmit)="atualizarUser()">
         <!-- <small class="mensagemErro">{{mensagemErro}}</small> -->
+        <p>Nome:<input type="text" [formControlName]="'nome'"></p>
         <p>Email:<input type="text" [formControlName]="'email'"></p>
         <small *ngIf="formEditar.get('email')!.touched && formEditar.get('email')!.invalid">
             <span *ngIf="formEditar.errors?.['required']">O campo 'email' é de preenchimento obrigatório!</span>
@@ -16,9 +17,11 @@
         <p>Senha:<input type="password" [formControlName]="'senha'"></p>
         <small *ngIf="formEditar.get('senha')!.touched && formEditar.get('senha')!.invalid">
             <span *ngIf="formEditar.errors?.['required']">O campo 'senha' é de preenchimento obrigatório!</span>
-        </small>      
+        </small>
+        <p>Morada:<input type="text" [formControlName]="'morada'"></p>
+        <p>Código Postal:<input type="text" [formControlName]="'codigo_postal'"></p>
 
-            <p class="btEntrar" ><input  type="submit" value="Submter"></p>
-          
+        <p>País:<input type="text" [formControlName]="'pais'"></p>
+        <p class="btSubmeter"><input type="submit" value="Submeter"></p>
     </form>
 </div>

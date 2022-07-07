@@ -21,6 +21,8 @@ import { CardComponent } from './card/card.component';
 import { AdministradorComponent } from './users/administrador/administrador.component';
 import { ServstoreService } from './services/servstore.service';
 import { UsereditarComponent } from './users/usereditar/usereditar.component';
+import { WishlistComponent } from './users/wishlist/wishlist.component';
+import { CardwishlistComponent } from './card/cardwishlist/cardwishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { UsereditarComponent } from './users/usereditar/usereditar.component';
      ProdutoComponent, 
      PaginaprodutosComponent, 
      CardComponent , 
-     AdministradorComponent, UsereditarComponent,
+     AdministradorComponent, UsereditarComponent, WishlistComponent, CardwishlistComponent,
      
      
   ],

@@ -205,32 +205,28 @@
       "morada": "Rua Unidade Vimaranense",
       "codigo_postal": "4805-285",
       "pais": "Portugal",
-      "tipo": "Administrador",
-      "wishlists": []
+      "tipo": "Administrador"
     },
     {
-      "id": 2,
-      "nome": "Joana",
+      "nome": "Joana ",
       "email": "joana@gmail.com",
       "senha": "1234teste",
       "morada": "Rua Unidade Vimaranense",
-      "codigo_postal": "4805-285",
+      "codigo_postal": "4805",
       "pais": "Portugal",
-      "tipo": "Cliente",
-      "wishlists": {
-        "produtoId": 1
-      }
+      "id": 2
     },
     {
-      "nome": "joana",
+      "nome": "Joana Freitas",
       "email": "joanam@gmail.com",
       "senha": "108fermentoes",
-      "morada": "",
-      "codigo_postal": "",
-      "pais": "",
-      "wishlist": [],
-      "tipo": "Cliente",
-      "id": 3
+      "morada": "Rua 5 Outubro",
+      "codigo_postal": "4805",
+      "pais": "Portugal",
+      "id": 3,
+      "wishlist": [
+        3
+      ]
     },
     {
       "nome": "Maria",
@@ -242,6 +238,17 @@
       "wishlist": [],
       "tipo": "Cliente",
       "id": 4
+    },
+    {
+      "nome": "teresa",
+      "email": "teresa@gmail.com",
+      "senha": "teresaF.123",
+      "morada": "",
+      "codigo_postal": "",
+      "pais": "",
+      "wishlist": [],
+      "tipo": "Cliente",
+      "id": 5
     }
   ]
 }

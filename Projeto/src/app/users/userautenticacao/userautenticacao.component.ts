@@ -15,7 +15,7 @@ export class UserautenticacaoComponent implements OnInit {
   private listaUsers?: User[];
   mensagemErro!: string;
 
-  constructor(private router: Router, private servStore: ServstoreService, public modalRef: BsModalRef, private servUsers: ServusersService) {
+  constructor( private servStore: ServstoreService, public modalRef: BsModalRef, private servUsers: ServusersService) {
 
   }
 
@@ -73,13 +73,6 @@ export class UserautenticacaoComponent implements OnInit {
 
   }
 
-  gereClick() {
-
-    if (!this.mensagemErro && this.formLogin.touched) {
-
-      this.modalRef.hide();
-    }
-  }
 
   get email() {
     return this.formLogin.get('email')!;

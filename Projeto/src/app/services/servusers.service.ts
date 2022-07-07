@@ -44,7 +44,9 @@ export class ServusersService {
   }
 
   putUser(id:number, infoUser: User){
-    return this.http.put<User>(`${this.urlAPI}/${id}`, infoUser); 
+    console.log(infoUser, id)
+    return this.http.put<User>(`${this.urlAPI}/${id}`, infoUser);
+     
 
   }
 
@@ -53,5 +55,7 @@ export class ServusersService {
     .pipe(catchError(this.processaErro)); 
 
   }
+
+
 
 }

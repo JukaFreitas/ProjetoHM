@@ -1,0 +1,21 @@
+form{
+    padding-top: 10px;
+}
+
+form input {
+
+    width: 50%;
+
+}
+
+label {
+    text-align: right;
+    width: 100px;
+    line-height: 26px;
+  }
+  
+.btSubmeter{    
+    padding: 20px;
+
+    width: 50%;
+}

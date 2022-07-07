@@ -55,9 +55,7 @@
 
     <div class="iconsHeader" >
       <small  *ngIf="userComLogin">Bemvindo {{userNome}}</small>
-      <button>
-        
-
+      <button routerLink="/wishlist" routerLinkActive="activa" >
         <fa-icon class="faWishlist"  *ngIf="userComLogin"[icon]="faWishlist"></fa-icon>
       </button>
       <button type="button" class="button" (click)="openModalLogin()">
