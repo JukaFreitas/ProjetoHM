@@ -1,2 +1,5 @@
-<!-- <app-cardwishlist [data]="listaWishlist"></app-cardwishlist> -->
-
+ <p>Wishlist</p>
+   <section class="container" *ngFor="let wishlist of listaWishlist">
+    <app-cardwishlist [data]="wishlist"></app-cardwishlist>
+   </section>
+   <p *ngIf="mensagem">{{mensagem}}</p>

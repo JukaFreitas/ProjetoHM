@@ -8,7 +8,6 @@ import { PaginaprodutosComponent } from './produtos/paginaprodutos/paginaproduto
 import { AdministradorComponent } from './users/administrador/administrador.component';
 import { ServstoreService } from './services/servstore.service';
 import { UserautenticacaoComponent } from './users/userautenticacao/userautenticacao.component';
-import { AppComponent } from './app.component';
 import { WishlistComponent } from './users/wishlist/wishlist.component';
 
 
