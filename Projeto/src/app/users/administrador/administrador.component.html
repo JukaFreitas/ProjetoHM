@@ -1,69 +1,100 @@
 <h3>Gestão de Produtos</h3>
 <div class="formulario">
     <form [formGroup]="formProdutos" (ngSubmit)="inserirProduto()">
-        <p><label for="produto">Produto:</label> <input type="text" id="produto" formControlName="produto"></p>
-        <small *ngIf="formProdutos.get('produto')!.touched && formProdutos.get('produto')!.invalid">
+        <p><label for="nomr">Produto:</label> <input type="text" id="nome" formControlName="nome"></p>
+        <small *ngIf="formProdutos.get('nome')!.touched && formProdutos.get('nome')!.invalid">
             O nome do 'Produto' deverá ter, no mínimo 3 caracteres(máx. 40 caracteres).
         </small>
         <p><label for="marca">Marca:</label> <input type="text" id="marca" formControlName="marca"></p>
-
         <small *ngIf="formProdutos.get('marca')!.touched && formProdutos.get('marca')!.invalid">
             Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
         </small>
-
-        <p><label for="tipo">Tipo:</label> <select id="tipo" formControlName="tipo">
-
+        <p><label for="tipo_de_produto">Tipo:</label> <select id="tipo_de_produto" formControlName="tipo_de_produto">
+                <option value="">-- Seleccione um tipo --</option>
+                <option [ngValue]="tipo" *ngFor="let tipo of listaTipo">{{ tipo }}</option>
             </select></p>
         <p><label for="cor">Cor:</label> <input type="text" id="cor" formControlName="cor"></p>
         <p><label for="preco">Preço:</label> <input type="number" id="preco" formControlName="preco"></p>
-        <p><label for="descricao">Descrição:</label> <input type="text" id="descricao" formControlName="descricao"></p>
+        <p><label for="descricao">Descrição:</label><input type="text" id="descricao" formControlName="descricao"></p>
+        <p class="destaque">Destaque:
+            <label class="btDestaque" for="destaque">
+                <input (click)="destaqueProdutos()" type="checkbox" id="destaque" formControlName="destaque">
+                <span class="slider round"></span>
+            </label>
+            <small>{{mensagemErro}}</small>
 
-        <p class=""><input type="submit" value="Registar Produto" [disabled]="formProdutos.invalid"> </p>
+        </p>
+        <p class="btSubmeter"><input type="submit" value="Registar Produto" [disabled]="formProdutos.invalid"></p>
     </form>
-
 </div>
 
 <p class="pesquisaProduto">
-<label for="pesquisa">Pesquisa:</label>
-<input type="text" #nomepesquisa id="pesquisa" (input)="pesquisaProduto(nomepesquisa.value)" value="{{ pesquisaCorrente }}">
-<button type="button" (click)="pesquisaProduto(nomepesquisa.value)" style="background-color: cyan;">Pesquisar</button>
-<button type="button" (click)="clearPesquisa();nomepesquisa.value=''" style="background-color: cyan;">Limpar
-    pesquisa</button>
+    <label for="pesquisa">Pesquisa:</label>
+    <input type="text" #pesquisaTexto (input)="pesquisaProduto(pesquisaTexto.value)">
+    <button type="button" (click)="pesquisaProduto(pesquisaTexto.value)"
+        style="background-color: cyan;">Pesquisar</button>
+    <button type="button" (click)="clearPesquisa();pesquisaTexto.value=''" style="background-color: cyan;">Limpar
+        pesquisa</button>
 </p>
 
-<p *ngIf="listaProdutos.length===0">Não existem dados na tabela de Produtos.</p>
-<table id="tabelaDados" *ngIf="listaProdutos.length!==0">
-    <thead>
-        <tr>
-            <th>Foto</th>
-            <th>Marca</th>
-            <th>Produto</th>
-            <th>Tipo produto</th>
-            <th>Cor</th>
-            <th>Preço</th>
-            <th>Destaque</th>
-            <th>Operações</th>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let produto of listaProdutos">
-            <td> <img src="/assets/ {{produto.foto_principal }}"></td>
-            
-            <td>{{ produto.marca }}</td>
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.tipo_de_produto }}</td>
-            <td>{{ produto.cor}}</td>
-            <td>{{ produto.preco}}</td>
-            <td>{{ produto.destaque }}</td>
-            <td><a href="javascript:void(0);" class="tabela_livro_icone" (click)="eliminaProduto(produto.id!,$event)">&#10005;</a>&nbsp;
-                <a href="javascript:void(0);" class="tabela_livro_icone" (click)="alteraProduto(produto.id!,$event)">&#9998;</a></td>
+<div class="tabelaProdutos">
+    <p *ngIf="listaProdutos.length===0">Não existem dados na tabela de Produtos.</p>
+    <table id="tabelaDados" *ngIf="listaProdutos.length!==0">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Marca</th>
+                <th>Produto</th>
+                <th>Tipo produto</th>
+                <th>Cor</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Destaque</th>
+                <th>Operações</th>
 
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="8">Total de produtos: {{ listaProdutos.length }}</td>
-        </tr>
-    </tfoot>
-</table>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produto of listaProdutos">
+
+                <td class="adminFotos">
+                    <img src="/assets/{{produto.foto_principal}}" class="fotoPrincipal">
+                    <img src="/assets/{{produto.foto_secundaria}}" class="fotoPrincipal">
+                </td>
+
+                <td>{{ produto.marca }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.tipo_de_produto}}</td>
+                <td>{{ produto.cor}}</td>
+                <td>{{ produto.preco}}</td>
+                <td>{{produto.descricao}}</td>
+                <td *ngIf="produto.destaque">
+                    <button (click)="removerDestaque(produto)">
+                        &#10005;
+                    </button>
+                </td>
+                <td *ngIf="!produto.destaque">
+                    <button (click)="adicionarDestaque(produto)">
+                        <fa-icon [icon]="faCerto"></fa-icon>
+                    </button>
+
+                </td>
+
+
+                <td><a href="javascript:void(0);" class="tabela_produto_icone"
+                        (click)="eliminaProduto(produto.id!)">&#10005;</a>&nbsp;
+                    <a href="javascript:void(0);" class="tabela_produto_icone"
+                        (click)="alteraProduto(produto)">&#9998;</a>
+                </td>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="8">Total de produtos: {{ listaProdutos.length }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<!-- <ng-template #adicionarDestaque><button (click)="adicionarDestaque()">&#10005;</button></ng-template> -->

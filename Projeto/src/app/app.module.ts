@@ -23,21 +23,26 @@ import { ServstoreService } from './services/servstore.service';
 import { UsereditarComponent } from './users/usereditar/usereditar.component';
 import { WishlistComponent } from './users/wishlist/wishlist.component';
 import { CardwishlistComponent } from './card/cardwishlist/cardwishlist.component';
+import { AdministradoreditarComponent } from './users/administradoreditar/administradoreditar.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserautenticacaoComponent,
-    UserComponent, 
+    UserComponent,
     UserregistoComponent,
-     HomepagComponent, 
-     CarroselComponent, 
-     DestaquesComponent, 
-     ProdutoComponent, 
-     PaginaprodutosComponent, 
-     CardComponent , 
-     AdministradorComponent, UsereditarComponent, WishlistComponent, CardwishlistComponent,
-     
-     
+    HomepagComponent,
+    CarroselComponent,
+    DestaquesComponent,
+    ProdutoComponent,
+    PaginaprodutosComponent,
+    CardComponent,
+    AdministradorComponent,
+    UsereditarComponent,
+    WishlistComponent,
+    CardwishlistComponent,
+    AdministradoreditarComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -47,14 +52,14 @@ import { CardwishlistComponent } from './card/cardwishlist/cardwishlist.componen
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     CarouselModule.forRoot(),
-    FontAwesomeModule, 
+    FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     CarouselModule
-    
-    
+
+
   ],
-  providers: [ ServstoreService, { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true }}],
+  providers: [ServstoreService, { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

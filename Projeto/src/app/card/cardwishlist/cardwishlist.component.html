@@ -1,7 +1,11 @@
 <div class="card">
-    <img src="/assets/{{data.foto_principal}}" class="cardImagem">
+    <div class="cardImagem">
+    <img src="/assets/{{data.foto_principal}}" >
+</div>
+<div class="cardInformacao">
     <p class="marca">{{ data.marca }}</p>
     <p class="nome">{{ data.nome }}</p>
     <p class="preco">{{ data.preco }}€</p>
     <button type="button" (click)="removerWishlist()">Remover</button>
+</div>
 </div>

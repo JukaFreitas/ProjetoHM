@@ -62,7 +62,7 @@ console.log(this.user)
       this.getProdutosGenero();
     }
 
-    this.readPageProdutos(this.initialRecord,this.numberRecords);
+  //  this.readPageProdutos(this.initialRecord,this.numberRecords);
 
 
 
@@ -151,13 +151,12 @@ console.log(this.user)
 
     this.servProdutos.getProdutosPage(iniRec, numRec).subscribe({
       next: (response) => {
-         this.listaResponse = this.listaFinal;
     
 
-         this.listaResponse = response.body;
+         this.listaFinal = response.body;
         console.log(this.listaFinal)
         this.totalRegistos = Number(response.headers.get("X-Total-Count"));
-        // console.log(response.headers.get("X-Total-Count"));
+       console.log(response.headers.get("X-Total-Count"));
       }
     });
 

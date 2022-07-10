@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Atualizar Dados de Produto</h4>
+
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="formulario">
+    <form [formGroup]="formEditar" (ngSubmit)="alteraProduto()">
+        <p>Produto:<input type="text" id="nome" formControlName="nome"></p>
+        <small *ngIf="formEditar.get('nome')!.touched && formEditar.get('nome')!.invalid">
+            O nome do 'Produto' deverá ter, no mínimo 3 caracteres(máx. 40 caracteres).
+        </small>
+        <p>Marca:<input type="text" id="marca" formControlName="marca"></p>
+        <small *ngIf="formEditar.get('marca')!.touched && formEditar.get('marca')!.invalid">
+            Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+        </small>
+        <p><label for="tipo_de_produto">Tipo:</label> <select id="tipo_de_produto" formControlName="tipo_de_produto">
+                <option value="">-- Seleccione um tipo --</option>
+                <option [ngValue]="tipo" *ngFor="let tipo of listaTipo">{{ tipo }}</option>
+            </select></p>
+        <p>Cor:<input type="text" id="cor" formControlName="cor"></p>
+        <p>Preço:<input type="number" id="preco" formControlName="preco"></p>
+        <p class="descricao">Descrição:<input type="text" id="descricao" formControlName="descricao"></p>
+        <p class="btSubmeter"><input type="submit" value="Atualizar Produto" ></p>
+    </form>
+</div>

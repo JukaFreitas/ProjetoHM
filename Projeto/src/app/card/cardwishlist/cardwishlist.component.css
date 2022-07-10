@@ -5,3 +5,11 @@
     border: none;
     justify-content: center;
 }
+
+.card button{
+    background-color:red;
+    border: red;
+    color: white;
+    font-weight: bolder;
+    width: 10%;
+}

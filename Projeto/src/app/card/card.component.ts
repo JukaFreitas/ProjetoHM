@@ -4,6 +4,7 @@ import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import { User } from '../models/user';
 import { ServstoreService } from '../services/servstore.service';
 import { ServusersService } from '../services/servusers.service';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-card',
@@ -42,8 +43,6 @@ export class CardComponent implements OnInit {
 
           console.log(this.user); 
           this.faIcon= this.faStar;     
-
-
         }
 
       } else {

@@ -9,6 +9,10 @@
     padding: 20px;
 } 
 
+.genero p {
+    font-size: larger;
+    font-weight: bolder;
+}
 .paginaProdutosCaixa{
    padding-left: 300px;
 }

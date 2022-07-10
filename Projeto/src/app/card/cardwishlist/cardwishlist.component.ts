@@ -11,36 +11,37 @@ import { User } from 'src/app/models/user';
 })
 export class CardwishlistComponent implements OnInit {
   @Input() data: any;
-  user!:User; 
+  user!: User;
 
-  constructor(private servProduto : ServprodutosService, private servStore : ServstoreService) { }
+  constructor(private servProduto: ServprodutosService, private servStore: ServstoreService) { }
 
   ngOnInit(): void {
+    this.user = this.servStore.getCurrentUser();
     console.log(this.data);
     this.getProduto();
-   this.user= this.servStore.getCurrentUser();
 
   }
 
-  getProduto(){
+  getProduto() {
 
     this.servProduto.getProduto(this.data)
-    .subscribe((produto:Produto)=>{
-this.data= produto;
-    })
+      .subscribe((produto: Produto) => {
+        this.data = produto;
+        console.log(produto)
+      })
 
   }
-  removerWishlist(){
-if(this.user){
-  const index =  this.user.wishlist?.indexOf(this.data.id)
-  if(index !==-1){
-    this.user.wishlist?.splice(Number(index), 1);  
+  removerWishlist() {
+    if (this.user) {
+      const index = this.user.wishlist?.indexOf(this.data.id)
+      if (index !== -1) {
+        this.user.wishlist?.splice(Number(index), 1);
 
-    console.log(this.user); 
-     
+        console.log(this.user);
 
-  }
-}
+
+      }
+    }
   }
 
 }

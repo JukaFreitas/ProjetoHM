@@ -56,7 +56,10 @@
     <div class="iconsHeader" >
       <small  *ngIf="userComLogin">Bemvindo {{userNome}}</small>
       <button routerLink="/wishlist" routerLinkActive="activa" >
-        <fa-icon class="faWishlist"  *ngIf="userComLogin"[icon]="faWishlist"></fa-icon>
+        <fa-icon class="faWishlist"  *ngIf="userComLogin "[icon]="faWishlist"></fa-icon>
+      </button>
+      <button routerLink="/administrador" routerLinkActive="activa" >
+        <fa-icon class="faAdministrador" [icon]="faAdmin"></fa-icon>
       </button>
       <button type="button" class="button" (click)="openModalLogin()">
         <fa-icon class="faLogin"  *ngIf="!userComLogin"[icon]="faLogin"></fa-icon>
@@ -68,7 +71,7 @@
         <fa-icon class="faRegisto" *ngIf="!userComLogin" [icon]="faRegisto"></fa-icon>
       </button>
       <button routerLink="/user" routerLinkActive="activa" type="button" class="button">
-        <fa-icon class="faPerfil" *ngIf="userComLogin"[icon]="faPerfil"></fa-icon>
+        <fa-icon class="faPerfil" *ngIf="userComLogin "[icon]="faPerfil"></fa-icon>
       </button>
     </div>
   </div>
